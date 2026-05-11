@@ -1,0 +1,4148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HikariZen — Your Career Path, Illuminated</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   HIKARIZEN — ZEN CAREER INTELLIGENCE SYSTEM
+   ============================================ */
+
+:root {
+  /* Vibrant Zen Palette - Light Mode Refined */
+  --jade: #10B981;
+  --jade-light: #34D399;
+  --jade-dark: #065F46;
+  --jade-deeper: #064E3B;
+  --bg: #F8FAFC;
+  --bg2: #F1F5F9;
+  --surface: #FFFFFF;
+  --surface-solid: #FFFFFF;
+  --border: rgba(16, 185, 129, 0.12);
+  --border-soft: rgba(0, 0, 0, 0.05);
+  --text: #0F172A;
+  --text2: #334155;
+  --text3: #64748B;
+  --text-faint: #94A3B8;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --sidebar-w: 240px;
+  --topbar-h: 64px;
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.dark-mode {
+  /* Premium SaaS Dark Mode - Linear/Vercel Style */
+  --bg: #090E0C;
+  --bg2: #0D1411;
+  --surface: #121A16;
+  --surface-solid: #121A16;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-soft: rgba(255, 255, 255, 0.04);
+  --jade: #10B981;
+  --jade-light: #34D399;
+  --jade-dark: #059669;
+  --text: #ECFDF5;
+  --text2: #94A3B8;
+  --text3: #64748B;
+  --text-faint: #334155;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 16px 48px rgba(0, 0, 0, 0.8);
+  font-weight: 400;
+}
+
+body.dark-mode .section-heading,
+body.dark-mode .card-title,
+body.dark-mode .stat-val {
+  font-weight: 600;
+}
+
+body.dark-mode .card,
+body.dark-mode .stat-card,
+body.dark-mode .collapsible,
+body.dark-mode .roadmap-card,
+body.dark-mode .course-card,
+body.dark-mode .project-card,
+body.dark-mode .question-card {
+  background: var(--surface);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: var(--shadow-soft), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+}
+
+body.dark-mode .btn-jade:hover {
+  background: var(--jade-light);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+body.dark-mode .sidebar {
+  background: #0D1411;
+  border-right: 1px solid var(--border);
+}
+
+body.dark-mode .topbar {
+  background: rgba(9, 14, 12, 0.8);
+  border-bottom: 1px solid var(--border);
+}
+
+body.dark-mode .ai-bub {
+  background: rgba(18, 26, 22, 0.95);
+  color: #ECFDF5;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+}
+
+body.dark-mode .spiritling-bubble {
+  background: rgba(18, 26, 22, 0.95);
+  color: #ECFDF5;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* Spiritling Hidden by Default */
+#spiritling {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+#spiritling.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.dark-mode .spiritling-panel {
+  background: #0D1411;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+body.dark-mode .sp-header {
+  background: #121A16;
+  border-bottom: 1px solid var(--border);
+  color: var(--jade);
+}
+
+body.dark-mode .sp-suggestion {
+  background: #16221C;
+  border: 1px solid var(--border);
+  color: var(--text2);
+}
+
+body.dark-mode .sp-suggestion:hover {
+  background: #1B2621;
+  border-color: var(--jade);
+  color: var(--jade);
+}
+
+body.dark-mode .spiritling-body {
+  filter: drop-shadow(0 0 50px rgba(111,175,146,0.5));
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+/* ══════════════════════════════════════════
+   GLOBAL LAYERING SYSTEM (Z-INDEX)
+   ══════════════════════════════════════════ */
+#app-background { position: fixed; inset: 0; z-index: 0; }
+#app            { position: relative; z-index: 10; }
+.sidebar        { z-index: 20; }
+.topbar         { z-index: 25; }
+#spiritling     { z-index: 100; }
+#intro-overlay  { z-index: 1000; }
+#toast-container { z-index: 2000; }
+
+/* ─────────────────────────────────────
+   PERSISTENT BACKGROUND (CINEMATIC)
+───────────────────────────────────── */
+#app-background {
+  background: #000;
+  overflow: hidden;
+}
+
+.bg-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('beautiful-plant-illustration.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0; /* Start fully hidden for Stage 1 */
+  transform: scale(1.05);
+  filter: blur(10px); 
+  will-change: opacity, transform, filter;
+  transition: opacity 2s ease-out, filter 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.bg-image.faded {
+  opacity: 0.3;
+}
+
+.bg-image.sharp {
+  opacity: 0.7;
+  filter: blur(0px);
+  transform: scale(1);
+}
+
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none;
+}
+
+body.dark-mode .bg-overlay {
+  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+}
+
+/* ─────────────────────────────────────
+   CINEMATIC INTRO ANIMATION OVERLAY
+───────────────────────────────────── */
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000; /* Stage 1: Full Black */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  will-change: opacity;
+  transition: opacity 1s ease-out, visibility 1s;
+}
+
+#intro-overlay.fade-bg {
+  background: transparent; /* Allow bg-image to show through */
+}
+
+#intro-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.leaf-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.leaf {
+  position: absolute;
+  top: -20px;
+  width: 10px;
+  height: 20px;
+  background: rgba(107,175,146,0.4);
+  border-radius: 10px 0;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.cinematic-logo {
+  position: absolute;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 56px;
+  letter-spacing: 0.15em;
+  color: #fff;
+  opacity: 0;
+  transform: scale(0.95);
+  z-index: 10;
+  will-change: opacity, transform;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(135deg, #EFF7F2, #A8D5BA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cinematic-logo.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.water-drop {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 15px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.6));
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  will-change: transform, opacity;
+  z-index: 11;
+}
+
+.water-drop.fall {
+  animation: dropFall 0.7s ease-in forwards;
+}
+
+@keyframes dropFall {
+  0% { transform: translate(-50%, -100%); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translate(-50%, 50vh); opacity: 1; }
+}
+
+.cinematic-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(168,213,186,0.4);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  will-change: transform, opacity;
+  z-index: 10;
+}
+
+.cinematic-ripple.expand {
+  animation: rippleExpand 1s cubic-bezier(0.2, 0.4, 0.3, 1) forwards;
+}
+
+@keyframes rippleExpand {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 1; border-width: 4px; }
+  100% { transform: translate(-50%, -50%) scale(15); opacity: 0; border-width: 1px; }
+}
+
+#app.intro-blur {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+/* ─────────────────────────────────────
+   SOUND TOGGLE
+───────────────────────────────────── */
+#sound-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 7px 14px;
+  font-size: 12px;
+  color: var(--text2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  backdrop-filter: blur(12px);
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+#sound-toggle:hover { background: white; }
+
+/* ─────────────────────────────────────
+   LAYOUT
+───────────────────────────────────── */
+#app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease-out;
+  will-change: transform, opacity;
+}
+
+/* ─────────────────────────────────────
+   SIDEBAR
+───────────────────────────────────── */
+.sidebar {
+  width: var(--sidebar-w);
+  height: 100vh;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 16px;
+  flex-shrink: 0;
+  transition: width 0.35s ease, transform 0.35s ease;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.sidebar.collapsed {
+  width: 0;
+  padding: 0;
+  transform: translateX(-100%);
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 0 8px;
+}
+
+.logo-leaf {
+  width: 32px; height: 32px;
+  background: var(--jade);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.sidebar-section-label {
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: var(--text3);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0 12px;
+  margin-bottom: 12px;
+  margin-top: 24px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text2);
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+  position: relative;
+}
+
+.nav-link:hover {
+  background: var(--bg2);
+  color: var(--text);
+}
+
+.nav-link.active {
+  background: rgba(16, 185, 129, 0.08);
+  color: var(--jade);
+  font-weight: 600;
+}
+
+.nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%; bottom: 20%;
+  width: 3px;
+  background: var(--jade);
+  border-radius: 0 4px 4px 0;
+}
+
+.nav-icon {
+  width: 20px; height: 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.user-profile-mini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.user-profile-mini:hover { background: var(--bg2); }
+
+.user-avatar-sm {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--jade);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  flex-shrink: 0;
+}
+
+.user-name-sm {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.user-role-sm {
+  font-size: 12px;
+  color: var(--text3);
+  white-space: nowrap;
+}
+
+/* ─────────────────────────────────────
+   MAIN CONTENT
+───────────────────────────────────── */
+.main-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 0;
+  background: var(--bg);
+}
+
+/* ─────────────────────────────────────
+   TOPBAR
+───────────────────────────────────── */
+.topbar {
+  height: var(--topbar-h);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  gap: 16px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 5;
+}
+
+.topbar-burger {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--text2);
+  transition: var(--transition);
+}
+
+.topbar-burger:hover { background: var(--bg2); color: var(--text); border-color: var(--text-faint); }
+
+.topbar-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.topbar-subtitle {
+  font-size: 13px;
+  color: var(--text3);
+  margin-top: -1px;
+  font-weight: 400;
+}
+
+.topbar-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.focus-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text2);
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'Inter', sans-serif;
+}
+
+.focus-btn:hover { background: var(--bg2); color: var(--text); border-color: var(--text-faint); }
+.focus-btn.active { background: var(--jade); color: #000; border-color: var(--jade); }
+
+.topbar-divider { width: 1px; height: 24px; background: var(--border); }
+
+.daily-insight-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--jade);
+  max-width: 320px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.daily-insight-pill:hover { background: rgba(16, 185, 129, 0.12); border-color: var(--jade); }
+
+/* ─────────────────────────────────────
+   PAGE CONTAINER
+───────────────────────────────────── */
+.page-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 32px 100px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--jade-light) transparent;
+}
+
+.page-container::-webkit-scrollbar { width: 5px; }
+.page-container::-webkit-scrollbar-thumb { background: var(--jade-light); border-radius: 3px; }
+
+/* ─────────────────────────────────────
+   PAGES
+───────────────────────────────────── */
+.page { display: none; }
+.page.active {
+  display: block;
+  animation: pageFadeIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─────────────────────────────────────
+   SECTION HEADERS
+───────────────────────────────────── */
+.section-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--jade);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 6px;
+}
+
+.section-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 32px;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+
+.section-desc {
+  font-size: 14px;
+  color: var(--text2);
+  font-weight: 300;
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* ─────────────────────────────────────
+   CARDS
+───────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card);
+  border-color: rgba(16, 185, 129, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+/* ─────────────────────────────────────
+   GRID
+───────────────────────────────────── */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.span2 { grid-column: span 2; }
+.mb { margin-bottom: 24px; }
+.mb2 { margin-bottom: 32px; }
+
+/* ─────────────────────────────────────
+   STAT CARDS
+───────────────────────────────────── */
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: var(--jade);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+.stat-card:hover::before { opacity: 1; }
+
+.stat-emoji { font-size: 24px; margin-bottom: 4px; }
+
+.stat-val {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--text);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stat-lbl {
+  font-size: 13px;
+  color: var(--text3);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.stat-delta {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--jade);
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ─────────────────────────────────────
+   WATER FILL PROGRESS
+───────────────────────────────────── */
+.water-container {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: var(--bg2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.water-fill {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  border-radius: 4px;
+  background: var(--jade);
+  transition: width 1.4s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+}
+
+/* ─────────────────────────────────────
+   BUTTONS
+───────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition);
+  text-decoration: none;
+  user-select: none;
+}
+
+.btn-jade {
+  background: var(--jade);
+  color: #000;
+  border-color: var(--jade);
+}
+
+.btn-jade:hover { 
+  background: var(--jade-light); 
+  border-color: var(--jade-light);
+  transform: translateY(-1px); 
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); 
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-ghost:hover { 
+  background: var(--bg2); 
+  border-color: var(--text-faint); 
+}
+
+.btn-sm { padding: 6px 12px; font-size: 13px; }
+
+/* ─────────────────────────────────────
+   CHIPS
+───────────────────────────────────── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text2);
+  transition: var(--transition);
+  user-select: none;
+}
+
+.chip:hover { border-color: var(--jade); color: var(--jade); background: rgba(16, 185, 129, 0.04); }
+
+.chip.sel {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: var(--jade);
+  color: var(--jade);
+  font-weight: 600;
+}
+
+/* ─────────────────────────────────────
+   FORMS
+───────────────────────────────────── */
+.form-label {
+  font-size: 12px;
+  color: var(--text3);
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.form-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: var(--transition);
+  appearance: none;
+}
+
+.form-input:focus {
+  border-color: var(--jade);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+select.form-input option { background: white; }
+
+.form-group { margin-bottom: 18px; }
+
+/* ─────────────────────────────────────
+   COLLAPSIBLE SECTIONS
+───────────────────────────────────── */
+.collapsible {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.collapsible-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.collapsible-header:hover { background: rgba(107,175,146,0.05); }
+
+.collapsible-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.collapsible-arrow {
+  font-size: 12px;
+  color: var(--text3);
+  transition: transform 0.3s ease;
+}
+
+.collapsible-arrow.open { transform: rotate(180deg); }
+
+.collapsible-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+.collapsible-body.open { max-height: 600px; }
+.collapsible-inner { padding: 0 24px 24px; }
+
+/* ─────────────────────────────────────
+   RADAR CANVAS
+───────────────────────────────────── */
+.radar-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+/* ─────────────────────────────────────
+   GAP ANALYSIS ITEMS
+───────────────────────────────────── */
+.gap-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.gap-item:last-child { border-bottom: none; }
+
+.gap-ico {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+  background: var(--jade);
+  color: #000;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.gap-info { flex: 1; min-width: 0; }
+.gap-name { font-size: 15px; font-weight: 600; color: var(--text); }
+.gap-why { font-size: 13px; color: var(--text3); margin-top: 3px; line-height: 1.5; }
+
+.gap-bars { width: 140px; flex-shrink: 0; }
+.gap-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.gap-bar-lbl { font-size: 11px; color: var(--text3); width: 32px; font-weight: 600; font-family: 'Inter', sans-serif; }
+.gap-bar-track { flex: 1; height: 6px; background: var(--bg2); border-radius: 3px; overflow: hidden; }
+.gap-bar-fill { height: 100%; border-radius: 3px; background: var(--jade); transition: width 1s ease; box-shadow: 0 0 8px rgba(16, 185, 129, 0.3); }
+
+.gap-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.badge-critical { background: rgba(239, 68, 68, 0.1); color: #F87171; border: 1px solid rgba(239, 68, 68, 0.2); }
+.badge-high { background: rgba(245, 158, 11, 0.1); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.2); }
+.badge-medium { background: rgba(16, 185, 129, 0.1); color: var(--jade); border: 1px solid var(--border); }
+.badge-low { background: var(--bg2); color: var(--text3); border: 1px solid var(--border); }
+
+/* ─────────────────────────────────────
+   ROADMAP TIMELINE
+───────────────────────────────────── */
+.roadmap-line {
+  position: relative;
+  padding-left: 40px;
+}
+
+.roadmap-line::before {
+  content: '';
+  position: absolute;
+  left: 13px; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--border);
+  border-radius: 1px;
+}
+
+.roadmap-phase { position: relative; margin-bottom: 28px; }
+
+.roadmap-dot {
+  position: absolute;
+  left: -33px; top: 18px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--bg);
+  z-index: 2;
+}
+
+.roadmap-dot.done { border-color: var(--jade); background: var(--jade); box-shadow: 0 0 10px rgba(16, 185, 129, 0.4); }
+.roadmap-dot.now {
+  border-color: var(--jade);
+  background: var(--surface);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+}
+
+.roadmap-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.roadmap-card.now-active {
+  border-color: var(--jade);
+  box-shadow: var(--shadow-card), 0 0 0 1px rgba(16, 185, 129, 0.2);
+}
+
+.roadmap-card:hover { transform: translateX(4px); border-color: var(--text-faint); }
+
+.roadmap-phase-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.roadmap-phase-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--text);
+}
+
+.roadmap-duration {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text3);
+  background: var(--bg2);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+}
+
+.roadmap-items { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.roadmap-item {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: var(--bg2);
+  color: var(--text2);
+  border: 1px solid var(--border);
+}
+
+.roadmap-item.done { text-decoration: line-through; opacity: 0.4; }
+.roadmap-item.next { border-color: var(--jade); color: var(--jade); background: rgba(16, 185, 129, 0.08); font-weight: 600; }
+
+/* ─────────────────────────────────────
+   COURSE CARDS
+───────────────────────────────────── */
+.course-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: var(--transition);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.course-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); border-color: var(--jade); }
+
+.course-card-header { display: flex; align-items: flex-start; gap: 14px; }
+
+.course-ico {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  background: var(--bg2);
+  color: var(--jade);
+  border: 1px solid var(--border);
+}
+
+.course-card-title { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 20px; line-height: 1.2; color: var(--text); }
+.course-card-provider { font-size: 13px; color: var(--text3); font-weight: 500; margin-top: 4px; }
+.course-card-why { font-size: 14px; color: var(--text2); line-height: 1.6; font-style: italic; }
+
+.course-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.course-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--bg2);
+  color: var(--text3);
+  border: 1px solid var(--border-soft);
+}
+
+.course-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.course-rating { color: #FBBF24; font-size: 13px; font-weight: 600; }
+.course-duration { font-size: 13px; color: var(--text3); font-weight: 500; }
+.course-match-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--jade);
+  background: rgba(16, 185, 129, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* ─────────────────────────────────────
+   PROJECT CARDS
+───────────────────────────────────── */
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+.project-card:hover { border-color: var(--jade); box-shadow: var(--shadow-card); transform: translateY(-4px); }
+
+.project-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.ps-done { background: rgba(16, 185, 129, 0.1); color: var(--jade); }
+.ps-progress { background: rgba(245, 158, 11, 0.1); color: #FBBF24; }
+.ps-planned { background: var(--bg2); color: var(--text3); }
+
+/* ─────────────────────────────────────
+   INTERVIEW Q&A
+───────────────────────────────────── */
+.question-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+}
+
+.question-card:hover { border-color: var(--jade); box-shadow: var(--shadow-card); }
+.q-category { font-size: 11px; color: var(--jade); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px; }
+.q-text { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.5; margin-bottom: 14px; }
+.q-answer { font-size: 14px; color: var(--text2); line-height: 1.6; display: none; border-top: 1px solid var(--border-soft); padding-top: 16px; margin-top: 4px; }
+.q-answer.show { display: block; }
+
+/* ─────────────────────────────────────
+   SPIRITLING CHAT
+───────────────────────────────────── */
+.chat-wrap {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--topbar-h) - 80px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.chat-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.spiritling-avatar-sm {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: var(--jade);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  animation: spiritFloat 3s ease-in-out infinite;
+}
+
+@keyframes spiritFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.chat-header-info {}
+.chat-header-name { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 20px; color: var(--text); }
+.chat-header-status { font-size: 13px; color: var(--jade); font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.status-pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--jade); animation: pulse 2s infinite; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--bg);
+}
+
+.msg {
+  display: flex;
+  gap: 12px;
+  max-width: 85%;
+  animation: msgAppear 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes msgAppear {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.msg.user { align-self: flex-end; flex-direction: row-reverse; }
+
+.msg-avatar-sm {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.ai-av { background: var(--jade); color: #000; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.2); }
+.user-av { background: var(--bg2); border: 1px solid var(--border); color: var(--text); }
+
+.msg-bubble {
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.ai-bub {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-bottom-left-radius: 2px;
+  box-shadow: var(--shadow-soft);
+}
+
+.user-bub {
+  background: var(--jade);
+  color: #000;
+  font-weight: 500;
+  border-bottom-right-radius: 2px;
+}
+
+.chat-input-wrap {
+  padding: 20px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.chat-input {
+  flex: 1;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  outline: none;
+  resize: none;
+  min-height: 44px;
+  max-height: 120px;
+  transition: var(--transition);
+}
+
+.chat-input:focus { border-color: var(--jade); background: var(--surface); box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1); }
+
+.send-btn {
+  width: 44px; height: 44px;
+  background: var(--jade);
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.send-btn:hover { background: var(--jade-light); transform: translateY(-1px); }
+.send-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.typing { display: flex; gap: 4px; align-items: center; padding: 4px 0; }
+.typing-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--jade); animation: td 1.4s infinite; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes td {
+  0%, 60%, 100% { opacity: 0.3; transform: scale(0.8); }
+  30% { opacity: 1; transform: scale(1); }
+}
+
+/* ─────────────────────────────────────
+   SPIRITLING FLOATING COMPANION
+───────────────────────────────────── */
+#spiritling {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 1000;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Base body */
+.spiritling-body {
+  width: 64px; height: 64px;
+  border-radius: 16px;
+  background-image: url('spiritling.png');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--surface);
+  border: 2px solid var(--jade);
+  display: flex; align-items: center; justify-content: center;
+  animation: spiritlingFloat 4s ease-in-out infinite;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(16, 185, 129, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.spiritling-body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), transparent);
+  pointer-events: none;
+}
+
+@keyframes spiritlingFloat {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+.spiritling-body:hover {
+  transform: scale(1.1) translateY(-4px);
+  border-color: var(--jade-light);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 15px rgba(16, 185, 129, 0.3);
+}
+
+.spiritling-label {
+  font-size: 12px;
+  color: var(--jade);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--surface);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+/* States */
+.spiritling-body.state-thinking {
+  animation: spiritThink 1s ease-in-out infinite;
+}
+@keyframes spiritThink {
+  0%, 100% { filter: drop-shadow(0 0 15px rgba(107,175,146,0.6)) brightness(1); transform: translateY(-4px) scale(1.05); }
+  50% { filter: drop-shadow(0 0 30px rgba(107,175,146,0.9)) brightness(1.2); transform: translateY(-4px) scale(1.08); }
+}
+
+.spiritling-body.state-responding {
+  animation: spiritRespond 2s ease-in-out infinite;
+}
+@keyframes spiritRespond {
+  0%, 100% { transform: translateY(-6px) scale(1.05); filter: drop-shadow(0 0 25px rgba(168,213,186,0.8)); }
+  50% { transform: translateY(-10px) scale(1.1); filter: drop-shadow(0 0 40px rgba(168,213,186,1)); }
+}
+
+.spiritling-body.state-happy {
+  animation: spiritHappy 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+@keyframes spiritHappy {
+  0% { transform: translateY(0) scale(1); }
+  40% { transform: translateY(-20px) scale(1.1); }
+  70% { transform: translateY(-10px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Sparkle particles */
+.sparkle-particle {
+  position: absolute;
+  pointer-events: none;
+  font-size: 14px;
+  animation: sparkleOut 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+  z-index: 1001;
+}
+
+@keyframes sparkleOut {
+  0% { opacity: 1; transform: translate(0,0) scale(0.5); }
+  100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(1.5) rotate(180deg); }
+}
+
+/* Spiritling Bubble */
+.spiritling-bubble {
+  position: absolute;
+  bottom: 85px;
+  right: 10px;
+  width: max-content;
+  max-width: 260px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  padding: 12px 18px;
+  border-radius: 18px 18px 4px 18px;
+  box-shadow: var(--shadow-card);
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 999;
+}
+
+.spiritling-bubble.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Expand Panel Mode */
+.spiritling-panel {
+  position: absolute;
+  bottom: 100px;
+  right: 0;
+  width: 320px;
+  max-height: 400px;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1000;
+}
+
+.spiritling-panel.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.sp-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 18px;
+  background: linear-gradient(135deg, rgba(168,213,186,0.2), rgba(107,175,146,0.1));
+}
+
+.sp-close {
+  cursor: pointer;
+  color: var(--text3);
+  font-size: 16px;
+  transition: var(--transition);
+}
+.sp-close:hover { color: var(--text); }
+
+.sp-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.sp-suggestion {
+  padding: 10px 14px;
+  background: rgba(107,175,146,0.08);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.sp-suggestion:hover {
+  background: rgba(107,175,146,0.15);
+  border-color: var(--jade);
+}
+
+/* ─────────────────────────────────────
+   TOAST
+───────────────────────────────────── */
+#toast-area {
+  position: fixed;
+  bottom: 108px;
+  right: 24px;
+  z-index: 9990;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toast {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  font-size: 13px;
+  color: var(--text);
+  max-width: 280px;
+  animation: toastIn 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--shadow-card);
+}
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ─────────────────────────────────────
+   FOCUS MODE
+───────────────────────────────────── */
+body.focus-mode #sidebar { 
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-20px);
+}
+
+body.focus-mode .topbar {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+body.focus-mode #spiritling {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#focus-task-card {
+  display: none;
+  background: var(--surface);
+  border-radius: 24px;
+  padding: 48px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: var(--shadow-card);
+  text-align: center;
+  border: 1px solid var(--border);
+  position: relative;
+  z-index: 10001;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+#focus-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  will-change: opacity;
+}
+
+body.focus-mode #focus-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.focus-mode #focus-task-card { 
+  display: block; 
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────
+   YOUTUBE PLAYER
+───────────────────────────────────── 
+#music-control-panel {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 9999;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 280px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  backdrop-filter: blur(12px);
+}
+
+body.focus-mode #music-control-panel {
+  opacity: 0.2;
+  transform: translateY(10px);
+}
+body.focus-mode #music-control-panel:hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.music-input-wrap {
+  display: flex;
+  gap: 6px;
+}
+
+.music-input {
+  flex: 1;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: var(--text);
+  outline: none;
+}
+
+.music-btn {
+  background: var(--jade);
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.m-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text2);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+.m-icon-btn:hover { color: var(--jade); }
+
+.volume-slider {
+  flex: 1;
+  height: 4px;
+  -webkit-appearance: none;
+  background: var(--border);
+  border-radius: 2px;
+  outline: none;
+}
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: var(--jade);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#yt-player-container {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.breathe-subtle {
+  animation: breatheSubtle 4s ease-in-out infinite alternate;
+}
+
+@keyframes breatheSubtle {
+  0% { transform: scale(1); box-shadow: var(--shadow-card); }
+  100% { transform: scale(1.015); box-shadow: 0 15px 50px rgba(107,175,146,0.3); }
+}
+
+.focus-timer-wrap {
+  position: relative;
+  display: inline-block;
+}*/
+
+/* ─────────────────────────────────────
+   SALARY BARS
+───────────────────────────────────── */
+.sal-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.sal-label { font-size: 13px; color: var(--text2); width: 160px; flex-shrink: 0; }
+.sal-track { flex: 1; height: 28px; background: rgba(107,175,146,0.08); border-radius: 8px; overflow: hidden; }
+.sal-fill {
+  height: 100%;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: flex-end;
+  padding-right: 12px;
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: white;
+  font-weight: 500;
+  transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+.sal-val { font-size: 13px; color: var(--text3); width: 60px; text-align: right; font-family: 'JetBrains Mono', monospace; }
+
+/* ─────────────────────────────────────
+   DAILY INSIGHT MODAL
+───────────────────────────────────── */
+.insight-banner {
+  background: linear-gradient(135deg, rgba(107,175,146,0.12), rgba(168,213,186,0.08));
+  border: 1px solid rgba(107,175,146,0.25);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.insight-icon { font-size: 28px; flex-shrink: 0; }
+.insight-label { font-size: 11px; color: var(--jade); font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 4px; }
+.insight-text { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 18px; color: var(--text); line-height: 1.4; }
+
+/* ─────────────────────────────────────
+   PEER RING
+───────────────────────────────────── */
+.peer-row { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.peer-ring-wrap { position: relative; width: 56px; height: 56px; flex-shrink: 0; }
+.peer-ring-pct { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 15px; color: var(--text); }
+.peer-info-label { font-size: 13px; font-weight: 500; color: var(--text); }
+.peer-info-sub { font-size: 12px; color: var(--text3); }
+
+/* ─────────────────────────────────────
+   HEATMAP
+───────────────────────────────────── */
+.heatmap-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 5px; }
+.heatmap-cell {
+  aspect-ratio: 1;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: white;
+}
+.heatmap-cell:hover { transform: scale(1.12); z-index: 2; border-radius: 8px; }
+
+/* ─────────────────────────────────────
+   READINESS CARDS
+───────────────────────────────────── */
+.readiness-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.readiness-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); }
+.readiness-pct { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 32px; }
+.readiness-lbl { font-size: 12px; color: var(--text3); margin-top: 4px; }
+
+/* ─────────────────────────────────────
+   QUICK ACTIONS
+───────────────────────────────────── */
+.qa-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: var(--shadow-soft);
+}
+
+.qa-link:hover { 
+  background: var(--bg2); 
+  border-color: var(--jade); 
+  transform: translateX(4px); 
+  box-shadow: var(--shadow);
+}
+.qa-icon { font-size: 20px; }
+
+/* ─────────────────────────────────────
+   SUGGESTED QUESTIONS
+───────────────────────────────────── */
+.sq-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 14px;
+  color: var(--text2);
+}
+
+.sq-item:hover { background: var(--surface); color: var(--jade); border-color: var(--jade); }
+
+/* ─────────────────────────────────────
+   FILTER BTNS
+───────────────────────────────────── */
+.filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+
+/* ─────────────────────────────────────
+   PROFILE HERO BANNER
+───────────────────────────────────── */
+.profile-hero {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.02) 100%);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.profile-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 42px;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.profile-hero h1 em {
+  font-style: italic;
+  color: var(--jade);
+}
+
+.profile-hero p {
+  color: var(--text2);
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+/* ─────────────────────────────────────
+   DNA TRAITS
+───────────────────────────────────── */
+.dna-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.dna-row:last-child { border-bottom: none; }
+.dna-lbl { font-size: 13px; font-weight: 500; color: var(--text3); width: 100px; text-align: right; }
+.dna-lbl.right { text-align: left; }
+.dna-track { flex: 1; height: 8px; background: var(--bg2); border-radius: 4px; overflow: hidden; position: relative; }
+.dna-fill {
+  position: absolute;
+  top: 0; height: 100%;
+  background: var(--jade);
+  border-radius: 4px;
+  transition: width 1.2s ease;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* ─────────────────────────────────────
+   ANIMATIONS & DELIGHT
+───────────────────────────────────── */
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.98) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.page.active {
+  display: block;
+  animation: fadeInScale 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Focus Mode Radial Mask */
+body.focus-mode .main-wrap {
+  position: relative;
+}
+
+body.focus-mode .topbar,
+body.focus-mode .sidebar {
+  filter: grayscale(1) opacity(0.3);
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────
+   STAT CARD HOVER GLOW
+───────────────────────────────────── */
+.stat-card:hover {
+  border-color: var(--jade);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.1), var(--shadow-card);
+}
+
+/* ─────────────────────────────────────
+   SPIRITLING BREATHING
+───────────────────────────────────── */
+@keyframes spiritBreathe {
+  0%, 100% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(16, 185, 129, 0.2); }
+  50% { box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5), 0 0 20px rgba(16, 185, 129, 0.4); }
+}
+
+.spiritling-body {
+  animation: spiritlingFloat 4s ease-in-out infinite, spiritBreathe 4s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────
+   SCROLLBAR GLOBAL
+───────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text3); }
+
+/* ─────────────────────────────────────
+   OPP COST TIMELINE
+───────────────────────────────────── */
+.opp-seg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  font-size: 12px;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  transition: flex 0.8s ease;
+}
+
+/* ─────────────────────────────────────
+   SALARY UNLOCK CARD
+───────────────────────────────────── */
+.unlock-card {
+  background: linear-gradient(135deg, rgba(107,175,146,0.1), rgba(168,213,186,0.05));
+  border: 1px solid rgba(107,175,146,0.3);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+/* ─────────────────────────────────────
+   FOCUS TASK CARD CSS MOVED TO LINE 1517
+───────────────────────────────────── */
+
+/* ─────────────────────────────────────
+   MISC
+───────────────────────────────────── */
+.hidden { display: none !important; }
+
+.green { color: var(--jade); }
+.muted { color: var(--text3); font-size: 12px; }
+.italic { font-style: italic; }
+
+.skill-group-label {
+  font-size: 12px;
+  color: var(--text3);
+  margin: 14px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.chip-group { display: flex; flex-wrap: wrap; gap: 7px; }
+</style>
+</head>
+<body>
+
+<!-- GLOBAL BACKGROUND SYSTEM -->
+<div id="app-background">
+  <div class="bg-image" id="global-bg"></div>
+  <div class="bg-overlay"></div>
+</div>
+
+<!-- ══════════════════════════════════
+     CINEMATIC INTRO ANIMATION
+══════════════════════════════════ -->
+<div id="intro-overlay">
+  <div class="leaf-container"></div>
+  <div class="cinematic-logo">HikariZen</div>
+  <div class="water-drop"></div>
+  <div class="cinematic-ripple"></div>
+</div>
+
+<!-- ══════════════════════════════════
+     MUSIC CONTROL PANEL
+══════════════════════════════════ -->
+<div id="music-control-panel">
+  <div class="music-input-wrap">
+    <input type="text" id="music-url" class="music-input" placeholder="Paste YouTube link...">
+    <button class="music-btn" onclick="loadMusic()">Load</button>
+  </div>
+  <div class="music-controls">
+    <button class="m-icon-btn" id="play-pause-btn" onclick="toggleMusicPlay()">▶</button>
+    <button class="m-icon-btn" id="mute-btn" onclick="toggleMusicMute()">🔊</button>
+    <input type="range" class="volume-slider" id="volume-slider" min="0" max="100" value="50" oninput="changeVolume(this.value)">
+  </div>
+  <div id="yt-player-container"></div>
+</div>
+
+<!-- SOUND TOGGLE (Standard SFX) -->
+<button id="sound-toggle" onclick="toggleSound()">
+  <span id="sound-icon">🔔</span> SFX <span id="sound-txt">On</span>
+</button>
+
+<!-- ══════════════════════════════════
+     SPIRITLING FLOATING COMPANION
+══════════════════════════════════ -->
+<div id="spiritling">
+  <div class="spiritling-bubble" id="spirit-bubble"></div>
+  <div class="spiritling-panel" id="spirit-panel">
+    <div class="sp-header">
+      <span>Spiritling Assistant</span>
+      <span class="sp-close" onclick="closeSpiritPanel(event)">✕</span>
+    </div>
+    <div class="sp-body" id="sp-body-content">
+      <!-- Dynamic content injected here -->
+    </div>
+  </div>
+  <div class="spiritling-body" id="spirit-body" onclick="spiritlingClick(event)"></div>
+  <div class="spiritling-label">Spiritling</div>
+</div>
+
+<!-- ══════════════════════════════════
+     TOAST AREA
+══════════════════════════════════ -->
+<div id="toast-area"></div>
+
+<!-- ══════════════════════════════════
+     APP SHELL
+══════════════════════════════════ -->
+<div id="app" class="intro-blur">
+
+  <!-- SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-leaf">🌿</div>
+      <div class="logo-text">HikariZen</div>
+    </div>
+
+    <div class="sidebar-section-label">Navigate</div>
+
+    <button class="nav-link active" onclick="showPage('dashboard')" id="nav-dashboard">
+      <div class="nav-icon">🪷</div> Zen Panel
+    </button>
+    <button class="nav-link" onclick="showPage('profile')" id="nav-profile">
+      <div class="nav-icon">🌱</div> My Growth Profile
+    </button>
+    <button class="nav-link" onclick="showPage('gap')" id="nav-gap">
+      <div class="nav-icon">🔍</div> Clarity Scan
+    </button>
+    <button class="nav-link" onclick="showPage('roadmap')" id="nav-roadmap">
+      <div class="nav-icon">🗺️</div> Path of Progress
+    </button>
+    <button class="nav-link" onclick="showPage('courses')" id="nav-courses">
+      <div class="nav-icon">📖</div> Path of Growth
+    </button>
+    <button class="nav-link" onclick="showPage('projects')" id="nav-projects">
+      <div class="nav-icon">🏗️</div> Portfolio Garden
+    </button>
+    <button class="nav-link" onclick="showPage('interview')" id="nav-interview">
+      <div class="nav-icon">🎯</div> Mindful Prep
+    </button>
+
+    <div class="sidebar-section-label">Guidance</div>
+
+    <button class="nav-link" onclick="showPage('spiritling')" id="nav-spiritling">
+      <div class="nav-icon">🌿</div> Spiritling
+    </button>
+
+    <div class="sidebar-bottom">
+      <div class="user-profile-mini">
+        <div class="user-avatar-sm">A</div>
+        <div>
+          <div class="user-name-sm">Arjun Sharma</div>
+          <div class="user-role-sm">B.Tech CSE · 3rd Year</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="main-wrap">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <button class="topbar-burger" onclick="toggleSidebar()" title="Toggle sidebar">☰</button>
+      <div>
+        <div class="topbar-title" id="page-title">Zen Panel</div>
+        <div class="topbar-subtitle" id="page-subtitle">Your career landscape, at a glance</div>
+      </div>
+      <div class="topbar-right">
+        <button class="focus-btn" onclick="toggleDarkMode()" id="dark-mode-btn" style="background:transparent;border:1px solid var(--border);color:var(--text2);margin-right:8px;box-shadow:none;">🌙 Dark Mode</button>
+        <div class="daily-insight-pill" id="insight-pill" onclick="showInsightToast()">
+          🌿 <span id="insight-preview">Small, consistent steps lead to mastery.</span>
+        </div>
+        <div class="topbar-divider"></div>
+        <button class="focus-btn" id="focus-btn" onclick="toggleFocus()">✨ Focus Mode</button>
+      </div>
+    </header>
+
+    <!-- PAGE CONTAINER -->
+    <div class="page-container">
+
+      <!-- Focus Task (shown in focus mode) -->
+      <div id="focus-overlay"></div>
+      <div id="focus-task-card">
+        <div style="font-size: 48px; margin-bottom: 15px;">🎯</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:600; color:var(--text); margin-bottom:5px;">Today's Focus</div>
+        <div style="font-size:16px; color:var(--jade-dark); font-style:italic; margin-bottom:25px;" id="focus-task-text">Complete the React Hooks module on Udemy</div>
+        
+        <div class="focus-timer-wrap" style="margin-bottom: 30px;">
+          <svg viewBox="0 0 100 100" style="width:120px;height:120px;transform:rotate(-90deg);">
+            <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(107,175,146,0.15)" stroke-width="6" />
+            <circle cx="50" cy="50" r="45" fill="none" stroke="var(--jade)" stroke-width="6" stroke-dasharray="283" stroke-dashoffset="0" id="focus-timer-circle" style="transition: stroke-dashoffset 1s linear;" />
+          </svg>
+          <div id="focus-timer-display" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:600;color:var(--text);">25:00</div>
+        </div>
+
+        <div style="display:flex;justify-content:center;gap:12px;">
+          <button class="btn btn-ghost" id="focus-timer-btn" onclick="toggleFocusTimer()">Start Timer</button>
+          <button class="btn btn-jade" onclick="markFocusDone()">✓ Mark Complete</button>
+          <button class="btn btn-ghost" onclick="toggleFocus()">Exit</button>
+        </div>
+      </div>
+
+      <!-- ═══════════════
+           ZEN PANEL (DASHBOARD)
+      ═══════════════ -->
+      <div class="page active" id="page-dashboard">
+
+        <!-- Greeting -->
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:24px;">
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:36px; font-weight:600; color:var(--text); line-height:1.2;">Hello, Arjun.</div>
+            <div style="font-size:15px; color:var(--text2); margin-top:4px;">Ready to continue your growth journey?</div>
+          </div>
+        </div>
+
+        <!-- Daily Insight Banner -->
+        <div class="insight-banner">
+          <div class="insight-icon">🌿</div>
+          <div>
+            <div class="insight-label">Spiritling's Insight</div>
+            <div class="insight-text" id="daily-insight-text">...</div>
+          </div>
+        </div>
+
+        <!-- Journey Card -->
+        <div class="card mb" style="border-left: 4px solid var(--jade);">
+          <div style="font-size:15px; color:var(--text2); line-height:1.5;">You are on a steady path. With focused effort, you can reach your goal in 3–4 months.</div>
+        </div>
+
+        <!-- HERO SECTION: Career Readiness -->
+        <div class="g2 mb">
+          <!-- Career readiness -->
+          <div class="card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px;">
+            <div class="card-label">Career Readiness</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:600;color:var(--jade-dark);line-height:1;margin:10px 0;" class="stat-val">72<span style="font-size:24px;color:var(--text3);">/ 100</span></div>
+            <div style="font-size:15px;color:var(--text2);margin-bottom:24px;" id="dashboard-readiness-insight">You're doing well — 3 growth opportunities identified 🌿</div>
+            <div class="water-container" style="height:14px;border-radius:7px;width:100%;max-width:300px;">
+              <div class="water-fill" id="readiness-fill" style="width:72%;border-radius:7px;"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;width:100%;max-width:300px;font-size:11px;color:var(--text-faint);margin-top:8px;font-family:'JetBrains Mono',monospace;">
+              <span>Beginner</span><span>Proficient</span><span>Expert</span>
+            </div>
+          </div>
+
+          <!-- Radar -->
+          <div class="card">
+            <div class="card-label">Competency Radar</div>
+            <div class="card-title">Your Skill Landscape</div>
+            <div class="radar-wrap" style="margin-top:14px;">
+              <canvas id="radarCanvas" width="290" height="250"></canvas>
+            </div>
+            <div style="display:flex;gap:14px;margin-top:14px;font-size:12px;color:var(--text3);justify-content:center;">
+              <span>— You</span>
+              <span style="opacity:0.6;">- - Industry demand</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daily Reflection -->
+        <div class="card mb breathe-subtle" style="border-top: 4px solid var(--jade);">
+          <div class="card-label">🌿 Reflection</div>
+          <div class="card-title">What did you learn today?</div>
+          <textarea id="daily-reflection-input" class="form-input" rows="2" placeholder="Write a few words about your progress..." style="width:100%;margin:12px 0;" oninput="saveReflection()"></textarea>
+          <div style="font-size:11px;color:var(--text3);text-align:right;height:12px;font-weight:600;" id="reflection-status"></div>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="card mb">
+          <div class="card-label">Next Steps</div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:16px;" id="qa-links"></div>
+        </div>
+
+        <!-- Collapsible sections -->
+        <div class="collapsible">
+          <div class="collapsible-header" onclick="toggleCollapsible(this)">
+            <div class="collapsible-title">📊 Salary Trajectory</div>
+            <div class="collapsible-arrow">▼</div>
+          </div>
+          <div class="collapsible-body">
+            <div class="collapsible-inner" id="salary-bars"></div>
+          </div>
+        </div>
+
+        <div class="collapsible">
+          <div class="collapsible-header" onclick="toggleCollapsible(this)">
+            <div class="collapsible-title">🔥 Industry Demand Heatmap</div>
+            <div class="collapsible-arrow">▼</div>
+          </div>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <div style="font-size:13px;color:var(--text3);margin-bottom:16px;font-weight:500;">Skill demand intensity for your target role. Hover for details.</div>
+              <div class="heatmap-grid" id="heatmap"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="collapsible">
+          <div class="collapsible-header" onclick="toggleCollapsible(this)">
+            <div class="collapsible-title">⌛ Opportunity Cost of Waiting</div>
+            <div class="collapsible-arrow">▼</div>
+          </div>
+          <div class="collapsible-body">
+            <div class="collapsible-inner">
+              <div style="font-size:13px;color:var(--text2);margin-bottom:12px;font-weight:500;">Every month of delay has a quiet cost.</div>
+              <div style="font-family:'Inter',sans-serif;font-size:36px;font-weight:700;color:#F87171;margin-bottom:4px;letter-spacing:-0.02em;">₹8,400<span style="font-size:16px;color:var(--text3);font-weight:500;letter-spacing:0;">/month</span></div>
+              <div style="font-size:12px;color:var(--text3);margin-bottom:20px;font-weight:600;text-transform:uppercase;letter-spacing:0.02em;">Estimated income difference</div>
+              <div style="display:flex;border-radius:8px;overflow:hidden;height:44px;box-shadow:var(--shadow-soft);">
+                <div class="opp-seg" style="flex:2;background:#451a1a;">Now</div>
+                <div class="opp-seg" style="flex:3;background:#78350f;">3 mo</div>
+                <div class="opp-seg" style="flex:5;background:#064e3b;">6 mo</div>
+                <div class="opp-seg" style="flex:8;background:var(--jade-dark);">12 mo+</div>
+              </div>
+              <div style="display:flex;gap:0;font-size:11px;color:var(--text3);margin-top:10px;font-weight:700;font-family:'Inter',sans-serif;">
+                <span style="flex:2;color:#F87171;">₹0 gain</span>
+                <span style="flex:3;color:#FBBF24;">+₹2.5L</span>
+                <span style="flex:5;color:var(--jade);">+₹5L</span>
+                <span style="flex:8;color:var(--jade-light);text-align:right;">+₹10L+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /dashboard -->
+
+      <!-- ═══════════════
+           MY GROWTH PROFILE
+      ═══════════════ -->
+      <div class="page" id="page-profile">
+
+        <div class="profile-hero">
+          <h1>Shape your <em>Career DNA</em></h1>
+          <p>Your profile is the root of every insight. The clearer your picture, the sharper your guidance becomes.</p>
+        </div>
+
+        <div class="g2">
+          <div class="card">
+            <div class="card-label">Basic Information</div>
+            <div class="card-title" style="margin-bottom:18px;">About You</div>
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input class="form-input" type="text" id="profile-name" value="Arjun Sharma">
+            </div>
+            <div class="g2">
+              <div class="form-group">
+                <label class="form-label">Degree / Major</label>
+                <input class="form-input" id="profile-degree" value="B.Tech CSE">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Year of Study</label>
+                <select class="form-input" id="profile-year">
+                  <option>1st Year</option><option>2nd Year</option><option selected>3rd Year</option><option>4th Year</option><option>Postgraduate</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">University</label>
+              <input class="form-input" id="profile-university" value="IIT Bhubaneswar">
+            </div>
+            <div class="form-group">
+              <label class="form-label">CGPA</label>
+              <input class="form-input" type="number" id="profile-cgpa" value="8.2" step="0.1" min="0" max="10">
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-label">Career Direction</div>
+            <div class="card-title" style="margin-bottom:18px;">Goals & Character</div>
+            <div class="form-group">
+              <label class="form-label">Target Career Path</label>
+              <select class="form-input" id="target-career">
+                <option>Full Stack Developer</option>
+                <option>Data Scientist</option>
+                <option>ML Engineer</option>
+                <option>DevOps Engineer</option>
+                <option>Product Manager</option>
+                <option>Cybersecurity Analyst</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Target Companies</label>
+              <div class="chip-group">
+                <div class="chip sel" onclick="this.classList.toggle('sel')">Google</div>
+                <div class="chip" onclick="this.classList.toggle('sel')">Microsoft</div>
+                <div class="chip sel" onclick="this.classList.toggle('sel')">Amazon</div>
+                <div class="chip" onclick="this.classList.toggle('sel')">Startups</div>
+                <div class="chip" onclick="this.classList.toggle('sel')">Infosys</div>
+                <div class="chip" onclick="this.classList.toggle('sel')">Research</div>
+              </div>
+            </div>
+            <div style="margin-top:4px;">
+              <div class="card-label" style="margin-bottom:12px;">Career DNA Traits</div>
+              <div class="dna-row">
+                <div class="dna-lbl">Builder</div>
+                <div class="dna-track"><div class="dna-fill" style="left:0;width:75%;"></div></div>
+                <div class="dna-lbl right">Analyst</div>
+              </div>
+              <div class="dna-row">
+                <div class="dna-lbl">Solo</div>
+                <div class="dna-track"><div class="dna-fill" style="left:60%;width:40%;"></div></div>
+                <div class="dna-lbl right">Team Lead</div>
+              </div>
+              <div class="dna-row">
+                <div class="dna-lbl">Tech Deep</div>
+                <div class="dna-track"><div class="dna-fill" style="left:0;width:60%;"></div></div>
+                <div class="dna-lbl right">Broad PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="card" style="margin-top:18px;">
+          <div class="card-label">Skill Self-Assessment</div>
+          <div class="card-title" style="margin-bottom:6px;">Your Current Skills</div>
+          <div style="font-size:13px;color:var(--text3);margin-bottom:18px;">Click a skill to add it. Click again to cycle through beginner → intermediate → advanced.</div>
+
+          <div class="skill-group-label">Programming Languages</div>
+          <div class="chip-group">
+            <div class="chip lv-adv sel" onclick="cycleSkill(this)">Python <span class="chip-lv">ADV</span></div>
+            <div class="chip lv-int sel" onclick="cycleSkill(this)">Java <span class="chip-lv">INT</span></div>
+            <div class="chip lv-beg sel" onclick="cycleSkill(this)">C++ <span class="chip-lv">BEG</span></div>
+            <div class="chip" onclick="cycleSkill(this)">JavaScript</div>
+            <div class="chip" onclick="cycleSkill(this)">TypeScript</div>
+            <div class="chip" onclick="cycleSkill(this)">Go</div>
+            <div class="chip" onclick="cycleSkill(this)">Rust</div>
+          </div>
+
+          <div class="skill-group-label">Frameworks & Tools</div>
+          <div class="chip-group">
+            <div class="chip lv-beg sel" onclick="cycleSkill(this)">React <span class="chip-lv">BEG</span></div>
+            <div class="chip" onclick="cycleSkill(this)">Node.js</div>
+            <div class="chip lv-adv sel" onclick="cycleSkill(this)">Django <span class="chip-lv">ADV</span></div>
+            <div class="chip" onclick="cycleSkill(this)">FastAPI</div>
+            <div class="chip" onclick="cycleSkill(this)">Docker</div>
+            <div class="chip" onclick="cycleSkill(this)">Kubernetes</div>
+            <div class="chip" onclick="cycleSkill(this)">PostgreSQL</div>
+          </div>
+
+          <div class="skill-group-label">AI / ML / Data</div>
+          <div class="chip-group">
+            <div class="chip lv-int sel" onclick="cycleSkill(this)">NumPy/Pandas <span class="chip-lv">INT</span></div>
+            <div class="chip lv-beg sel" onclick="cycleSkill(this)">Scikit-learn <span class="chip-lv">BEG</span></div>
+            <div class="chip" onclick="cycleSkill(this)">TensorFlow</div>
+            <div class="chip" onclick="cycleSkill(this)">PyTorch</div>
+            <div class="chip" onclick="cycleSkill(this)">LLMs / GenAI</div>
+          </div>
+
+          <div class="skill-group-label">Cloud & DevOps</div>
+          <div class="chip-group">
+            <div class="chip" onclick="cycleSkill(this)">AWS</div>
+            <div class="chip" onclick="cycleSkill(this)">GCP</div>
+            <div class="chip" onclick="cycleSkill(this)">Azure</div>
+            <div class="chip" onclick="cycleSkill(this)">CI/CD</div>
+            <div class="chip" onclick="cycleSkill(this)">Linux / Bash</div>
+            <div class="chip" onclick="cycleSkill(this)">Terraform</div>
+          </div>
+
+          <div style="margin-top:22px;display:flex;gap:10px;">
+            <button class="btn btn-jade" onclick="saveProfile()">Save Profile & Scan Gaps</button>
+            <button class="btn btn-ghost" onclick="showPage('gap')">View Clarity Scan →</button>
+          </div>
+        </div>
+
+      </div><!-- /profile -->
+
+      <!-- ═══════════════
+           CLARITY SCAN (SKILL GAP)
+      ═══════════════ -->
+      <div class="page" id="page-gap">
+        <div class="section-eyebrow">// clarity scan</div>
+        <div class="section-heading">Skill Gap Analysis</div>
+        <div class="section-desc">A growth opportunity has been identified 🌿 Here's a calm, clear picture of where to focus your energy for <strong id="gap-career-lbl" style="color:var(--jade-dark);">Full Stack Developer</strong>.</div>
+
+        <div class="g4 mb">
+          <div class="stat-card">
+            <div class="stat-lbl" style="color:#F87171;">Critical Gaps</div>
+            <div class="stat-val" style="color:#F87171;">3</div>
+            <div style="font-size:11px;color:var(--text3);font-weight:600;">Immediate focus required</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-lbl" style="color:#FBBF24;">Growth Areas</div>
+            <div class="stat-val" style="color:#FBBF24;">5</div>
+            <div style="font-size:11px;color:var(--text3);font-weight:600;">Secondary priorities</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-lbl" style="color:var(--jade);">Core Strengths</div>
+            <div class="stat-val" style="color:var(--jade);">7</div>
+            <div style="font-size:11px;color:var(--text3);font-weight:600;">Maintain and leverage</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-lbl">Role Match</div>
+            <div class="stat-val">68%</div>
+            <div style="font-size:11px;color:var(--jade);font-weight:700;">+4% this week</div>
+          </div>
+        </div>
+
+        <div class="g2 mb">
+          <div class="card">
+            <div class="card-label">Growth Map</div>
+            <div class="card-title" style="margin-bottom:14px;">Skills by Priority</div>
+            <div id="gap-items"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-label">Peer Reflection</div>
+            <div class="card-title" style="margin-bottom:14px;">Among 2,840 similar students</div>
+            <div id="peer-benchmarks"></div>
+            <div style="margin-top:16px;padding:14px 16px;background:rgba(107,175,146,0.07);border-radius:var(--radius-sm);border:1px solid var(--border);">
+              <div style="font-size:11px;color:var(--jade);font-family:'JetBrains Mono',monospace;margin-bottom:5px;">🌿 SPIRITLING INSIGHT</div>
+              <div style="font-size:13px;color:var(--text2);line-height:1.55;">Students who cultivated <strong style="color:var(--text);">System Design</strong> alongside <strong style="color:var(--text);">TypeScript</strong> saw a 42% improvement in interview outcomes within 3 months.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb">
+          <div class="card-label">Path Readiness</div>
+          <div class="card-title" style="margin-bottom:14px;">Interview Readiness by Career Path</div>
+          <div class="g4" id="readiness-cards"></div>
+        </div>
+
+      </div><!-- /gap -->
+
+      <!-- ═══════════════
+           PATH OF PROGRESS (ROADMAP)
+      ═══════════════ -->
+      <div class="page" id="page-roadmap">
+        <div class="section-eyebrow">// path of progress</div>
+        <div class="section-heading">Your Career Roadmap</div>
+        <div class="section-desc">A living map that evolves as you grow. Currently aligned for <strong style="color:var(--jade-dark);">Full Stack Developer</strong>.</div>
+
+        <div class="g2">
+          <div class="roadmap-line" id="roadmap-phases"></div>
+
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div class="card">
+              <div class="card-label">Current Phase · Phase 2</div>
+              <div class="card-title" style="margin-bottom:6px;">Frontend Mastery</div>
+              <div style="font-size:13px;color:var(--text3);margin-bottom:14px;">Weeks 5–12 · Estimated 5 weeks remaining</div>
+              <div style="font-size:12px;color:var(--text2);margin-bottom:8px;">Phase Progress</div>
+              <div class="water-container">
+                <div class="water-fill" style="width:40%;"></div>
+              </div>
+              <div style="font-size:11px;color:var(--text3);margin-top:6px;font-family:'JetBrains Mono',monospace;">40% complete</div>
+              <div style="margin-top:16px;display:flex;flex-direction:column;gap:7px;" id="phase-tasks"></div>
+            </div>
+
+            <div class="unlock-card">
+              <div class="card-label" style="color:var(--jade);">🔓 Salary Unlocks</div>
+              <div class="card-title" style="margin-bottom:14px;">Complete Each Phase to Unlock</div>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <span style="font-size:13px;color:var(--text2);">After Phase 2</span>
+                  <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:var(--jade-dark);">₹8–10 LPA</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <span style="font-size:13px;color:var(--text2);">After Phase 3</span>
+                  <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:#7A5A20;">₹12–15 LPA</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <span style="font-size:13px;color:var(--text2);">Certified Full Stack</span>
+                  <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:#8B4040;">₹18–25 LPA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /roadmap -->
+
+      <!-- ═══════════════
+           PATH OF GROWTH (COURSES)
+      ═══════════════ -->
+      <div class="page" id="page-courses">
+        <div class="section-eyebrow">// path of growth</div>
+        <div class="section-heading">Curated Learning</div>
+        <div class="section-desc">Each course below was chosen specifically for your gaps, learning style, and goals. Not a generic list — your list.</div>
+
+        <div class="filter-bar">
+          <button class="btn btn-jade btn-sm" onclick="filterCourses('all',this)">All</button>
+          <button class="btn btn-ghost btn-sm" onclick="filterCourses('critical',this)">🔴 Priority Gaps</button>
+          <button class="btn btn-ghost btn-sm" onclick="filterCourses('free',this)">🌿 Free</button>
+          <button class="btn btn-ghost btn-sm" onclick="filterCourses('cert',this)">🏆 Certification</button>
+          <button class="btn btn-ghost btn-sm" onclick="filterCourses('project',this)">⚡ Project-based</button>
+        </div>
+
+        <div class="g3" id="courses-grid"></div>
+      </div><!-- /courses -->
+
+      <!-- ═══════════════
+           PORTFOLIO GARDEN (PROJECTS)
+      ═══════════════ -->
+      <div class="page" id="page-projects">
+        <div class="section-eyebrow">// portfolio garden</div>
+        <div class="section-heading">Project Portfolio</div>
+        <div class="section-desc">Each project is a seed. Water it consistently, and it becomes something that opens doors.</div>
+
+        <div class="g4 mb">
+          <div class="stat-card">
+            <div class="stat-emoji">🟢</div>
+            <div class="stat-val">2</div><div class="stat-lbl">Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-emoji">🌱</div>
+            <div class="stat-val">1</div><div class="stat-lbl">In Progress</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-emoji">💡</div>
+            <div class="stat-val">3</div><div class="stat-lbl">Suggested</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-emoji">📈</div>
+            <div class="stat-val">+18%</div><div class="stat-lbl">Score Impact</div>
+          </div>
+        </div>
+
+        <div class="g2" id="projects-grid"></div>
+
+        <div class="card" style="margin-top:14px;border-style:dashed;cursor:pointer;text-align:center;padding:32px;" onclick="showToast('🌱 Project tracker — coming with AI suggestions!','jade')">
+          <div style="font-size:28px;margin-bottom:8px;">+</div>
+          <div style="font-size:14px;color:var(--text2);">Begin a new project</div>
+          <div style="font-size:12px;color:var(--text3);margin-top:4px;">Spiritling will suggest the best one for you</div>
+        </div>
+      </div><!-- /projects -->
+
+      <!-- ═══════════════
+           MINDFUL PREP (INTERVIEW)
+      ═══════════════ -->
+      <div class="page" id="page-interview">
+        <div class="section-eyebrow">// mindful prep</div>
+        <div class="section-heading">Interview Preparation</div>
+        <div class="section-desc">Questions tailored to your target companies, role, and current skill level. Practice with intention.</div>
+
+        <div class="g4 mb">
+          <div class="stat-card">
+            <div class="stat-emoji">🎯</div>
+            <div class="stat-val" style="color:#7A5A20;">65%</div>
+            <div class="stat-lbl">Readiness</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-emoji">✅</div>
+            <div class="stat-val">24</div>
+            <div class="stat-lbl">Practiced</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-emoji">💪</div>
+            <div class="stat-val">DSA</div>
+            <div class="stat-lbl">Strongest</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-emoji">🌱</div>
+            <div class="stat-val" style="font-size:22px;">Sys Design</div>
+            <div class="stat-lbl">Needs Attention</div>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <button class="btn btn-jade btn-sm" onclick="filterQ('all',this)">All Topics</button>
+          <button class="btn btn-ghost btn-sm" onclick="filterQ('dsa',this)">DSA</button>
+          <button class="btn btn-ghost btn-sm" onclick="filterQ('system',this)">System Design</button>
+          <button class="btn btn-ghost btn-sm" onclick="filterQ('behavioral',this)">Behavioral</button>
+          <button class="btn btn-ghost btn-sm" onclick="filterQ('frontend',this)">Frontend</button>
+        </div>
+
+        <div class="g2" id="questions-grid"></div>
+      </div><!-- /interview -->
+
+      <!-- ═══════════════
+           SPIRITLING CHAT
+      ═══════════════ -->
+      <div class="page" id="page-spiritling">
+        <div class="section-eyebrow">// your guide</div>
+        <div class="section-heading">Spiritling</div>
+        <div class="section-desc">Your calm, intelligent companion on the path. Ask anything — career questions, salary insights, study plans, or just guidance.</div>
+
+        <div class="g2">
+          <div class="chat-wrap">
+            <div class="chat-header">
+              <div class="spiritling-avatar-sm">🌿</div>
+              <div class="chat-header-info">
+                <div class="chat-header-name">Spiritling</div>
+                <div class="chat-header-status">
+                  <div class="status-pulse"></div>
+                  Present & listening
+                </div>
+              </div>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+              <!-- Dynamic welcome injected via JS -->
+            </div>
+            <div class="chat-input-wrap">
+              <textarea class="chat-input" id="chat-input" placeholder="Ask Spiritling anything…" rows="1" onkeydown="handleChatKey(event)"></textarea>
+              <button class="send-btn" id="send-btn" onclick="sendMessage()">→</button>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:14px;">
+            <div class="card">
+              <div class="card-label">Ask Spiritling</div>
+              <div class="card-title" style="margin-bottom:12px;">Suggested Questions</div>
+              <div style="display:flex;flex-direction:column;gap:7px;" id="suggested-qs"></div>
+            </div>
+
+            <div class="card">
+              <div class="card-label">Spiritling's Observations</div>
+              <div class="card-title" style="margin-bottom:12px;">Market Intelligence</div>
+              <div style="display:flex;flex-direction:column;gap:12px;" id="ai-insights"></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /spiritling -->
+
+    </div><!-- /page-container -->
+  </div><!-- /main-wrap -->
+</div><!-- /app -->
+
+<script>
+// ══════════════════════════════════════════
+// GLOBAL USER PROFILE SYSTEM (DYNAMIC)
+// ══════════════════════════════════════════
+const DEFAULT_PROFILE = {
+  name: "Arjun Sharma",
+  degree: "B.Tech CSE",
+  year: "3rd Year",
+  goal: "Full Stack Developer",
+  cgpa: "8.2",
+  university: "IIT Bhubaneswar",
+  targetCompanies: ["Google", "Amazon"],
+  skills: [
+    { name: "Python", level: "ADV" },
+    { name: "React", level: "BEG" }
+  ],
+  missingSkills: ["TypeScript", "System Design", "Docker"],
+  readiness: 72
+};
+
+let userProfile = { ...DEFAULT_PROFILE };
+
+// Load from LocalStorage
+function loadUserProfile() {
+  const saved = localStorage.getItem('hikarizen_user_profile');
+  if (saved) {
+    try {
+      userProfile = JSON.parse(saved);
+    } catch (e) {
+      userProfile = { ...DEFAULT_PROFILE };
+    }
+  }
+}
+
+// Save to LocalStorage
+function saveUserProfile() {
+  localStorage.setItem('hikarizen_user_profile', JSON.stringify(userProfile));
+  syncUIWithProfile();
+}
+
+// Sync UI with Profile Data
+function syncUIWithProfile() {
+  const name = userProfile.name || "Seeker";
+  const goal = userProfile.goal || "Career Growth";
+  
+  // Update Header/Greetings
+  document.querySelectorAll('.user-name-sm').forEach(el => el.textContent = name);
+  const greeting = document.querySelector('#page-dashboard h1');
+  if (greeting) greeting.textContent = `Hello, ${name.split(' ')[0]}.`;
+  
+  // Update Sidebar
+  const avatar = document.querySelector('.user-avatar-sm');
+  if (avatar) avatar.textContent = name.charAt(0);
+  
+  const sidebarRole = document.querySelector('.user-role-sm');
+  if (sidebarRole) sidebarRole.textContent = `${userProfile.degree} · ${userProfile.year}`;
+
+  // Update Career Readiness Page / Dashboard Stats
+  const readinessVal = document.querySelector('#page-dashboard .stat-val');
+  if (readinessVal) readinessVal.innerHTML = `${userProfile.readiness}<span style="font-size:24px;color:var(--text3);">/ 100</span>`;
+
+  // Update Profile Page Inputs (to keep them in sync if state changes elsewhere)
+  const nameInput = document.getElementById('profile-name');
+  if (nameInput) nameInput.value = userProfile.name;
+  
+  const degreeInput = document.getElementById('profile-degree');
+  if (degreeInput) degreeInput.value = userProfile.degree;
+
+  const yearSelect = document.getElementById('profile-year');
+  if (yearSelect) yearSelect.value = userProfile.year;
+
+  const goalSelect = document.getElementById('target-career');
+  if (goalSelect) goalSelect.value = userProfile.goal;
+
+  const universityInput = document.getElementById('profile-university');
+  if (universityInput) universityInput.value = userProfile.university;
+
+  const cgpaInput = document.getElementById('profile-cgpa');
+  if (cgpaInput) cgpaInput.value = userProfile.cgpa;
+
+  // Refresh Spiritling's contextual knowledge
+  updateSpiritlingContext();
+}
+
+// Attach Input Listeners
+function bindProfileInputs() {
+  const nameInput = document.getElementById('profile-name');
+  if (nameInput) nameInput.addEventListener('input', (e) => { userProfile.name = e.target.value; saveUserProfile(); });
+  
+  const degreeInput = document.getElementById('profile-degree');
+  if (degreeInput) degreeInput.addEventListener('input', (e) => { userProfile.degree = e.target.value; saveUserProfile(); });
+
+  const yearSelect = document.getElementById('profile-year');
+  if (yearSelect) yearSelect.addEventListener('change', (e) => { userProfile.year = e.target.value; saveUserProfile(); });
+
+  const goalSelect = document.getElementById('target-career');
+  if (goalSelect) goalSelect.addEventListener('change', (e) => { userProfile.goal = e.target.value; saveUserProfile(); });
+
+  const universityInput = document.getElementById('profile-university');
+  if (universityInput) universityInput.addEventListener('input', (e) => { userProfile.university = e.target.value; saveUserProfile(); });
+
+  const cgpaInput = document.getElementById('profile-cgpa');
+  if (cgpaInput) cgpaInput.addEventListener('input', (e) => { userProfile.cgpa = e.target.value; saveUserProfile(); });
+}
+
+function updateSpiritlingContext() {
+  const name = userProfile.name || "Seeker";
+  const goal = userProfile.goal || "your dreams";
+  const year = userProfile.year || "current";
+  const degree = userProfile.degree || "studies";
+
+  // Update Welcome Message
+  const chatMessages = document.getElementById('chat-messages');
+  if (chatMessages && chatMessages.children.length === 0) {
+    addMsg('ai', `Welcome back, ${name.split(' ')[0]} 🌿 I'm here to guide you.<br><br>
+      I can see your path clearly — a ${year} ${degree} student cultivating your journey toward <strong>${goal}</strong>.<br><br>
+      Shall we look at your next steps together?`);
+  }
+  
+  // Update Insight Text
+  const insightText = document.getElementById('daily-insight-text');
+  if (insightText) {
+    insightText.textContent = `Hello ${name.split(' ')[0]}, focusing on your path toward ${goal} will yield great results today.`;
+  }
+}
+
+const state = {
+  sidebarOpen: true,
+  soundOn: false,
+  focusMode: false,
+  spiritState: 'idle', // idle, thinking, responding, happy
+  ytPlayer: null,
+  musicPlaying: false,
+  musicMuted: false
+};
+
+// ══════════════════════════════════════════
+// YOUTUBE MUSIC SYSTEM
+// ══════════════════════════════════════════
+// Load YT API
+const tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+const firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+function onYouTubeIframeAPIReady() {
+  // Player initialized when user loads a URL
+}
+
+function extractVideoId(url) {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  const match = url.match(regExp);
+  return (match && match[2].length === 11) ? match[2] : null;
+}
+
+function loadMusic() {
+  const url = document.getElementById('music-url').value;
+  const videoId = extractVideoId(url);
+  
+  if (!videoId) {
+    showToast('Invalid YouTube URL 🌿', 'default');
+    return;
+  }
+
+  if (state.ytPlayer) {
+    state.ytPlayer.loadVideoById(videoId);
+  } else {
+    state.ytPlayer = new YT.Player('yt-player-container', {
+      height: '1',
+      width: '1',
+      videoId: videoId,
+      playerVars: {
+        'autoplay': 1,
+        'controls': 0,
+        'loop': 1,
+        'playlist': videoId // Required for looping
+      },
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+  showToast('Connecting to your music... 🎵', 'jade');
+}
+
+function onPlayerReady(event) {
+  event.target.setVolume(50);
+  event.target.playVideo();
+  state.musicPlaying = true;
+  updateMusicUI();
+}
+
+function onPlayerStateChange(event) {
+  if (event.data === YT.PlayerState.ENDED) {
+    event.target.playVideo(); // Force loop
+  }
+}
+
+function toggleMusicPlay() {
+  if (!state.ytPlayer) return;
+  if (state.musicPlaying) {
+    state.ytPlayer.pauseVideo();
+    state.musicPlaying = false;
+  } else {
+    state.ytPlayer.playVideo();
+    state.musicPlaying = true;
+  }
+  updateMusicUI();
+}
+
+function toggleMusicMute() {
+  if (!state.ytPlayer) return;
+  if (state.musicMuted) {
+    state.ytPlayer.unMute();
+    state.musicMuted = false;
+  } else {
+    state.ytPlayer.mute();
+    state.musicMuted = true;
+  }
+  updateMusicUI();
+}
+
+function changeVolume(val) {
+  if (!state.ytPlayer) return;
+  state.ytPlayer.setVolume(val);
+}
+
+function updateMusicUI() {
+  const playBtn = document.getElementById('play-pause-btn');
+  const muteBtn = document.getElementById('mute-btn');
+  playBtn.textContent = state.musicPlaying ? '⏸' : '▶';
+  muteBtn.textContent = state.musicMuted ? '🔇' : '🔊';
+}
+
+// ══════════════════════════════════════════
+// INTELLIGENCE ILLUSION
+// ══════════════════════════════════════════
+function generateIntelligence() {
+  if (userProfile.readiness < 60) {
+    return `${userProfile.name.split(' ')[0]}, you are building your foundation. Focus heavily on mastering one core skill this week.`;
+  } else if (userProfile.missingSkills.length >= 3) {
+    return `You are ${userProfile.readiness}% aligned with your goal. Focus on ${userProfile.focusSkill} and ${userProfile.missingSkills[0]}.`;
+  } else {
+    return `Excellent progress, ${userProfile.name.split(' ')[0]}. You are highly prepared for ${userProfile.targetRole}.`;
+  }
+}
+
+const todayInsight = generateIntelligence();
+
+// ══════════════════════════════════════════
+// CINEMATIC INTRO ANIMATION (REWRITTEN - 7.5s)
+// ══════════════════════════════════════════
+window.addEventListener('load', () => {
+  const overlay = document.getElementById('intro-overlay');
+  const globalBg = document.getElementById('global-bg');
+  const logo = document.querySelector('.cinematic-logo');
+  const drop = document.querySelector('.water-drop');
+  const ripple = document.querySelector('.cinematic-ripple');
+  const leafContainer = document.querySelector('.leaf-container');
+  const app = document.getElementById('app');
+  const spiritling = document.getElementById('spiritling');
+
+  loadUserProfile();
+
+  // 1. FULL BLACK (0s - 1s) - Handled by initial CSS state
+
+  // 2. FADED BACKGROUND + LEAVES (1s)
+  setTimeout(() => {
+    overlay.classList.add('fade-bg');
+    globalBg.classList.add('faded');
+    
+    // Spawn leaves
+    const leafCount = 10;
+    for (let i = 0; i < leafCount; i++) {
+      const leaf = document.createElement('div');
+      leaf.className = 'leaf';
+      leaf.style.left = Math.random() * 100 + 'vw';
+      leaf.style.opacity = 0.2 + Math.random() * 0.4;
+      const size = 0.4 + Math.random() * 0.8;
+      const duration = 3 + Math.random() * 3;
+      const delay = Math.random() * 4;
+      
+      leaf.animate([
+        { transform: `translateY(-20px) translateX(0) rotate(0deg) scale(${size})`, opacity: 0 },
+        { opacity: 1, offset: 0.1 },
+        { transform: `translateY(110vh) translateX(${(Math.random()-0.5)*100}px) rotate(${360 + Math.random() * 720}deg) scale(${size})`, opacity: 0 }
+      ], {
+        duration: duration * 1000,
+        delay: delay * 1000,
+        iterations: Infinity,
+        easing: 'ease-in-out'
+      });
+      leafContainer.appendChild(leaf);
+    }
+  }, 1000);
+
+  // 3. BACKGROUND SHARPENS (3s)
+  setTimeout(() => {
+    globalBg.classList.add('sharp');
+  }, 3000);
+
+  // 4. LOGO APPEARS (4.5s)
+  setTimeout(() => {
+    logo.classList.add('active');
+    playSound('chime');
+  }, 4500);
+
+  // 5. WATER DROPLET (5.5s)
+  setTimeout(() => {
+    logo.style.opacity = 0;
+    logo.style.transform = 'scale(1.05)';
+    drop.classList.add('fall');
+  }, 5500);
+
+  // 6. RIPPLE EFFECT (6.2s)
+  setTimeout(() => {
+    ripple.classList.add('expand');
+    playSound('ripple');
+  }, 6200);
+
+  // 7. TRANSITION TO APP (7.2s)
+  setTimeout(() => {
+    overlay.classList.add('hidden');
+    app.classList.remove('intro-blur');
+    app.style.opacity = 1;
+    app.style.transform = 'scale(1)';
+    initAll();
+  }, 7200);
+
+  // 8. FINAL CLEANUP (8s)
+  setTimeout(() => {
+    spiritling.classList.add('visible');
+    overlay.remove();
+  }, 8000);
+});
+
+// ══════════════════════════════════════════
+// SOUND
+// ══════════════════════════════════════════
+let audioCtx = null;
+
+function getAudio() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  return audioCtx;
+}
+
+function playSound(type) {
+  if (!state.soundOn) return;
+  try {
+    const ctx = getAudio();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    if (type === 'chime') {
+      osc.frequency.setValueAtTime(528, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(660, ctx.currentTime + 0.3);
+      gain.gain.setValueAtTime(0.08, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.8);
+      osc.start(ctx.currentTime);
+      osc.stop(ctx.currentTime + 0.8);
+    } else if (type === 'ripple') {
+      osc.frequency.setValueAtTime(440, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(220, ctx.currentTime + 0.2);
+      gain.gain.setValueAtTime(0.04, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+      osc.start(ctx.currentTime);
+      osc.stop(ctx.currentTime + 0.3);
+    } else if (type === 'sparkle') {
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(880, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(1760, ctx.currentTime + 0.1);
+      gain.gain.setValueAtTime(0.06, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.4);
+      osc.start(ctx.currentTime);
+      osc.stop(ctx.currentTime + 0.4);
+    }
+  } catch(e) {}
+}
+
+function toggleSound() {
+  state.soundOn = !state.soundOn;
+  document.getElementById('sound-icon').textContent = state.soundOn ? '🔔' : '🔕';
+  document.getElementById('sound-txt').textContent = state.soundOn ? 'On' : 'Off';
+}
+
+function toggleDarkMode() {
+  const isDark = document.body.classList.toggle('dark-mode');
+  const btn = document.getElementById('dark-mode-btn');
+  if (btn) {
+    btn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+  }
+  localStorage.setItem('hikarizen_dark', isDark ? 'true' : 'false');
+}
+
+// ══════════════════════════════════════════
+// NAVIGATION
+// ══════════════════════════════════════════
+const pages = {
+  dashboard: ['Zen Panel', 'Your career landscape, at a glance'],
+  profile: ['My Growth Profile', 'Build your Career DNA'],
+  gap: ['Clarity Scan', 'Understand your growth opportunities'],
+  roadmap: ['Path of Progress', 'Your adaptive career roadmap'],
+  courses: ['Path of Growth', 'Curated learning for your journey'],
+  projects: ['Portfolio Garden', 'Grow meaningful projects'],
+  interview: ['Mindful Prep', 'Practice with purpose and calm'],
+  spiritling: ['Spiritling', 'Your intelligent guide'],
+};
+
+function showPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + page)?.classList.add('active');
+  document.getElementById('nav-' + page)?.classList.add('active');
+  document.getElementById('page-title').textContent = pages[page]?.[0] || page;
+  document.getElementById('page-subtitle').textContent = pages[page]?.[1] || '';
+  playSound('ripple');
+}
+
+// ══════════════════════════════════════════
+// SIDEBAR
+// ══════════════════════════════════════════
+function toggleSidebar() {
+  const sb = document.getElementById('sidebar');
+  state.sidebarOpen = !state.sidebarOpen;
+  sb.classList.toggle('collapsed', !state.sidebarOpen);
+}
+
+// ══════════════════════════════════════════
+// FOCUS MODE & TIMER
+// ══════════════════════════════════════════
+const focusTasks = [
+  'Complete the React Hooks module on Udemy',
+  'Solve 2 LeetCode medium problems — focus on arrays',
+  'Read Chapter 3 of Designing Data-Intensive Applications',
+  'Practice one System Design problem: URL shortener',
+  'Add the AI Resume Analyzer to your GitHub',
+];
+
+let focusTimerInterval = null;
+let focusSecondsLeft = 25 * 60;
+const totalFocusSeconds = 25 * 60;
+
+function toggleFocus() {
+  state.focusMode = !state.focusMode;
+  document.body.classList.toggle('focus-mode', state.focusMode);
+  const btn = document.getElementById('focus-btn');
+  if (btn) {
+    btn.classList.toggle('active', state.focusMode);
+    btn.textContent = state.focusMode ? '✦ Exit Focus' : '✨ Focus Mode';
+  }
+
+  if (state.focusMode) {
+    const task = focusTasks[new Date().getDate() % focusTasks.length];
+    const taskText = document.getElementById('focus-task-text');
+    if (taskText) taskText.textContent = task;
+    showToast('🌙 Focus Mode activated. Breathe deeply.', 'jade');
+    resetFocusTimer();
+  } else {
+    clearInterval(focusTimerInterval);
+    focusTimerInterval = null;
+    showToast('Restoring your workspace... 🌿', 'jade');
+  }
+}
+
+function resetFocusTimer() {
+  clearInterval(focusTimerInterval);
+  focusTimerInterval = null;
+  focusSecondsLeft = totalFocusSeconds;
+  updateTimerDisplay();
+  document.getElementById('focus-timer-btn').textContent = 'Start Timer';
+}
+
+function toggleFocusTimer() {
+  const btn = document.getElementById('focus-timer-btn');
+  if (focusTimerInterval) {
+    clearInterval(focusTimerInterval);
+    focusTimerInterval = null;
+    btn.textContent = 'Resume';
+  } else {
+    btn.textContent = 'Pause';
+    focusTimerInterval = setInterval(() => {
+      focusSecondsLeft--;
+      updateTimerDisplay();
+      if (focusSecondsLeft <= 0) {
+        clearInterval(focusTimerInterval);
+        focusTimerInterval = null;
+        playSound('chime');
+        showToast('Focus session complete! Take a mindful break.', 'jade');
+      }
+    }, 1000);
+  }
+}
+
+function updateTimerDisplay() {
+  const mins = Math.floor(focusSecondsLeft / 60);
+  const secs = focusSecondsLeft % 60;
+  document.getElementById('focus-timer-display').textContent = `${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+  
+  const circle = document.getElementById('focus-timer-circle');
+  if (circle) {
+    const dashoffset = 283 - (focusSecondsLeft / totalFocusSeconds) * 283;
+    circle.style.strokeDashoffset = dashoffset;
+  }
+}
+
+function markFocusDone() {
+  showToast('🌟 Wonderful! Task completed. Growth is happening.', 'jade');
+  toggleFocus();
+  spiritlingReact('happy');
+}
+
+// ══════════════════════════════════════════
+// COLLAPSIBLE
+// ══════════════════════════════════════════
+function toggleCollapsible(header) {
+  const body = header.nextElementSibling;
+  const arrow = header.querySelector('.collapsible-arrow');
+  const isOpen = body.classList.toggle('open');
+  arrow.classList.toggle('open', isOpen);
+}
+
+// ══════════════════════════════════════════
+// CHIP INTERACTION
+// ══════════════════════════════════════════
+function cycleSkill(chip) {
+  const levels = ['', 'lv-beg', 'lv-int', 'lv-adv'];
+  const labels = ['', 'BEG', 'INT', 'ADV'];
+  const curr = levels.findIndex((l, i) => i > 0 && chip.classList.contains(l) && chip.classList.contains('sel'));
+  chip.classList.remove('sel', 'lv-beg', 'lv-int', 'lv-adv');
+  let span = chip.querySelector('.chip-lv');
+  if (span) span.remove();
+
+  const next = curr === -1 ? 1 : (curr + 1) % 4;
+  if (next === 0) return;
+
+  chip.classList.add('sel', levels[next]);
+  const s = document.createElement('span');
+  s.className = 'chip-lv';
+  s.textContent = labels[next];
+  chip.appendChild(s);
+}
+
+// ══════════════════════════════════════════
+// TOAST
+// ══════════════════════════════════════════
+function showToast(msg, type = 'default') {
+  const area = document.getElementById('toast-area');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  const dot = type === 'jade' ? '🌿' : '◉';
+  t.innerHTML = `<span>${dot}</span> ${msg}`;
+  area.appendChild(t);
+  setTimeout(() => { t.style.opacity = '0'; t.style.transform = 'translateX(16px)'; t.style.transition = 'all 0.4s'; setTimeout(() => t.remove(), 400); }, 3000);
+}
+
+function showInsightToast() {
+  showToast('🌿 ' + todayInsight, 'jade');
+}
+
+// ══════════════════════════════════════════
+// SPIRITLING
+// ══════════════════════════════════════════
+const spiritlingMessages = [
+  "You're doing well 🌿",
+  "Try focusing on React today",
+  "Small steps matter",
+  "Your readiness is a solid foundation.",
+  "Consider picking up TypeScript next."
+];
+
+let inactivityTimer = 0;
+function resetInactivity() { inactivityTimer = 0; }
+window.addEventListener('mousemove', resetInactivity);
+window.addEventListener('keydown', resetInactivity);
+window.addEventListener('click', resetInactivity);
+window.addEventListener('scroll', resetInactivity);
+
+function generateSpiritMessage() {
+  if (state.focusMode) return "Entering focus... stay with it 🌿";
+  if (userProfile.readiness < 60) {
+    const msgs = ["You're building a strong foundation. Keep going. 🌿", "Try focusing on one skill today.", `Don't get overwhelmed. Small steps, ${userProfile.name}.`];
+    return msgs[Math.floor(Math.random() * msgs.length)];
+  } else if (userProfile.missingSkills.length > 2) {
+    return "You have a few gaps. Try focusing on fewer skills at once.";
+  } else if (inactivityTimer > 15) {
+    return "You've been quiet... want to continue? 🌿";
+  } else {
+    const msgs = ["You're progressing steadily.", "Stay calm and centered.", "I am here to guide you.", "Your potential is expanding."];
+    return msgs[Math.floor(Math.random() * msgs.length)];
+  }
+}
+
+function startContinuousLife() {
+  setInterval(() => {
+    inactivityTimer++;
+    if (inactivityTimer > 15 && inactivityTimer % 15 === 0 && state.spiritState === 'idle') {
+      const bubble = document.getElementById('spirit-bubble');
+      const panel = document.getElementById('spirit-panel');
+      if (panel && !panel.classList.contains('active')) {
+        bubble.textContent = generateSpiritMessage();
+        bubble.classList.add('active');
+        spiritlingReact('thinking');
+        setTimeout(() => {
+          bubble.classList.remove('active');
+          spiritlingReact('idle');
+        }, 4000);
+      }
+    }
+  }, 1000);
+}
+
+function spiritlingClick(e) {
+  if (e) e.stopPropagation();
+  playSound('ripple');
+  
+  const body = document.getElementById('spirit-body');
+  const bubble = document.getElementById('spirit-bubble');
+  const panel = document.getElementById('spirit-panel');
+  
+  if (panel.classList.contains('active')) {
+    closeSpiritPanel();
+    return;
+  }
+  
+  if (bubble.classList.contains('active')) {
+    bubble.classList.remove('active');
+    panel.classList.add('active');
+    spiritlingReact('thinking');
+    
+    document.getElementById('sp-body-content').innerHTML = `
+      <div style="margin-bottom:12px;">Hello. I am analyzing your path...</div>
+      <div class="sp-suggestion" onclick="document.getElementById('chat-input').value='What are my top 3 growth opportunities right now?'; showPage('spiritling'); closeSpiritPanel();">What are my top 3 growth opportunities right now?</div>
+      <div class="sp-suggestion" onclick="document.getElementById('chat-input').value='Create a gentle 90-day study plan for me'; showPage('spiritling'); closeSpiritPanel();">Create a gentle 90-day study plan for me</div>
+      <div class="sp-suggestion" onclick="showPage('spiritling'); closeSpiritPanel();">Open Full Chat 🌿</div>
+    `;
+    return;
+  }
+  
+  spiritlingReact('happy');
+  const msg = spiritlingMessages[Math.floor(Math.random() * spiritlingMessages.length)];
+  bubble.textContent = msg;
+  bubble.classList.add('active');
+  
+  setTimeout(() => {
+    if(bubble.classList.contains('active')) {
+      bubble.classList.remove('active');
+      spiritlingReact('idle');
+    }
+  }, 4000);
+}
+
+function closeSpiritPanel(e) {
+  if (e) e.stopPropagation();
+  document.getElementById('spirit-panel').classList.remove('active');
+  spiritlingReact('idle');
+}
+
+function spiritlingReact(emotion) {
+  const body = document.getElementById('spirit-body');
+  body.className = 'spiritling-body'; 
+  
+  if (emotion === 'happy') {
+    body.classList.add('state-happy');
+    spawnSparkles(body);
+    setTimeout(() => {
+      body.classList.remove('state-happy');
+      if (document.getElementById('spirit-panel').classList.contains('active')) {
+        body.classList.add('state-thinking');
+      }
+    }, 600);
+  } else if (emotion === 'thinking') {
+    body.classList.add('state-thinking');
+  } else if (emotion === 'responding') {
+    body.classList.add('state-responding');
+  } else {
+    body.classList.add('state-idle');
+  }
+}
+
+function spawnSparkles(el) {
+  const rect = el.getBoundingClientRect();
+  const sparks = ['✦', '✧', '·', '∘', '✨'];
+  for (let i = 0; i < 6; i++) {
+    const s = document.createElement('div');
+    s.className = 'sparkle-particle';
+    s.textContent = sparks[i % sparks.length];
+    const tx = (Math.random() - 0.5) * 80 + 'px';
+    const ty = -(Math.random() * 60 + 20) + 'px';
+    s.style.cssText = `
+      left: ${rect.left + rect.width/2}px;
+      top: ${rect.top + 20}px;
+      --tx: ${tx};
+      --ty: ${ty};
+      color: var(--jade-light);
+      text-shadow: 0 0 8px rgba(107,175,146,0.8);
+      position: fixed;
+      z-index: 9999;
+    `;
+    document.body.appendChild(s);
+    setTimeout(() => s.remove(), 900);
+  }
+}
+
+// ══════════════════════════════════════════
+// RADAR CHART
+// ══════════════════════════════════════════
+function drawRadar() {
+  const c = document.getElementById('radarCanvas');
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  const cx = 145, cy = 125, r = 95;
+  const skills = [
+    { label: 'Frontend', you: 0.45, demand: 0.9 },
+    { label: 'Backend', you: 0.75, demand: 0.85 },
+    { label: 'DSA', you: 0.7, demand: 0.95 },
+    { label: 'ML/AI', you: 0.5, demand: 0.7 },
+    { label: 'Cloud', you: 0.2, demand: 0.75 },
+    { label: 'Sys Design', you: 0.3, demand: 0.85 },
+  ];
+  const n = skills.length;
+  const step = (2 * Math.PI) / n;
+  const start = -Math.PI / 2;
+
+  ctx.clearRect(0, 0, 290, 250);
+
+  // Grid
+  for (let ring = 1; ring <= 4; ring++) {
+    ctx.beginPath();
+    for (let j = 0; j < n; j++) {
+      const a = start + j * step;
+      const x = cx + (r * ring / 4) * Math.cos(a);
+      const y = cy + (r * ring / 4) * Math.sin(a);
+      j === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.closePath();
+    ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--border');
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  // Spokes
+  for (let j = 0; j < n; j++) {
+    const a = start + j * step;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.lineTo(cx + r * Math.cos(a), cy + r * Math.sin(a));
+    ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--border-soft');
+    ctx.stroke();
+  }
+
+  // Demand polygon
+  ctx.beginPath();
+  skills.forEach((s, j) => {
+    const a = start + j * step;
+    const x = cx + r * s.demand * Math.cos(a);
+    const y = cy + r * s.demand * Math.sin(a);
+    j === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(16, 185, 129, 0.05)';
+  ctx.fill();
+  ctx.strokeStyle = 'rgba(16, 185, 129, 0.2)';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([5, 4]);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // You polygon
+  ctx.beginPath();
+  skills.forEach((s, j) => {
+    const a = start + j * step;
+    const x = cx + r * s.you * Math.cos(a);
+    const y = cy + r * s.you * Math.sin(a);
+    j === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.closePath();
+  ctx.fillStyle = 'rgba(16, 185, 129, 0.15)';
+  ctx.fill();
+  ctx.strokeStyle = '#10B981';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // Labels
+  ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--text3');
+  ctx.font = '12px Inter';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  skills.forEach((s, j) => {
+    const a = start + j * step;
+    ctx.fillText(s.label, cx + (r + 18) * Math.cos(a), cy + (r + 18) * Math.sin(a));
+  });
+}
+
+// ══════════════════════════════════════════
+// QUICK ACTIONS
+// ══════════════════════════════════════════
+function buildQALinks() {
+  const links = [
+    { icon: '🔍', text: 'Review clarity scan — 3 growth areas', page: 'gap' },
+    { icon: '📖', text: 'Explore curated learning path', page: 'courses' },
+    { icon: '🗺️', text: 'View progress roadmap — Phase 2 active', page: 'roadmap' },
+    { icon: '🎯', text: 'Practice interview questions', page: 'interview' },
+  ];
+
+  const container = document.getElementById('qa-links');
+  if (!container) return;
+  container.innerHTML = '';
+  links.forEach(l => {
+    const el = document.createElement('div');
+    el.className = 'qa-link';
+    el.innerHTML = `<div class="qa-icon">${l.icon}</div><div>${l.text}</div>`;
+    el.onclick = () => showPage(l.page);
+    container.appendChild(el);
+  });
+}
+
+// ══════════════════════════════════════════
+// SALARY BARS
+// ══════════════════════════════════════════
+function buildSalaryBars() {
+  const rows = [
+    { label: 'Junior Dev (0–1yr)', val: 6, max: 22, color: 'rgba(16, 185, 129, 0.3)' },
+    { label: 'Mid Dev (1–3yr)', val: 12, max: 22, color: 'rgba(16, 185, 129, 0.5)' },
+    { label: 'You (projected)', val: 12, max: 22, color: '#10B981', highlight: true },
+    { label: 'After Roadmap', val: 18, max: 22, color: '#059669' },
+    { label: 'Senior Dev (5yr+)', val: 22, max: 22, color: '#064E3B' },
+  ];
+
+  const c = document.getElementById('salary-bars');
+  if (!c) return;
+  c.innerHTML = '';
+  rows.forEach(r => {
+    const row = document.createElement('div');
+    row.className = 'sal-row';
+    row.innerHTML = `
+      <div class="sal-label" style="${r.highlight?'font-weight:700;color:var(--jade);':''}">${r.label}</div>
+      <div class="sal-track">
+        <div class="sal-fill" style="width:${(r.val/r.max)*100}%;background:${r.color};">
+          ${r.val >= 10 ? '₹' + r.val + 'L' : ''}
+        </div>
+      </div>
+      <div class="sal-val">${r.val < 10 ? '₹' + r.val + 'L' : ''}</div>
+    `;
+    c.appendChild(row);
+  });
+}
+
+// ══════════════════════════════════════════
+// HEATMAP
+// ══════════════════════════════════════════
+function buildHeatmap() {
+  const skills = [
+    { name: 'React', heat: 0.95, crit: true },
+    { name: 'Node', heat: 0.88 },
+    { name: 'TypeScript', heat: 0.92, crit: true },
+    { name: 'SQL', heat: 0.70 },
+    { name: 'Docker', heat: 0.80 },
+    { name: 'AWS', heat: 0.85, crit: true },
+    { name: 'Python', heat: 0.60 },
+    { name: 'GraphQL', heat: 0.55 },
+    { name: 'Redis', heat: 0.60 },
+    { name: 'Git', heat: 0.40 },
+    { name: 'CI/CD', heat: 0.75 },
+    { name: 'Sys Des', heat: 0.90, crit: true },
+  ];
+
+  const hm = document.getElementById('heatmap');
+  if (!hm) return;
+  hm.innerHTML = '';
+  skills.forEach(s => {
+    const cell = document.createElement('div');
+    cell.className = 'heatmap-cell';
+    const color = s.crit
+      ? `rgba(239, 68, 68, ${s.heat})`
+      : `rgba(16, 185, 129, ${s.heat})`;
+    cell.style.background = color;
+    cell.title = `${s.name}: ${Math.round(s.heat*100)}% demand`;
+    cell.textContent = s.name;
+    hm.appendChild(cell);
+  });
+}
+
+// ══════════════════════════════════════════
+// GAP ANALYSIS
+// ══════════════════════════════════════════
+function buildGapItems() {
+  const gaps = [
+    { name: 'TypeScript', icon: '⚡', you: 10, demand: 90, peer: 55, badge: 'critical', why: 'Required in 87% of full-stack job descriptions at your target companies.' },
+    { name: 'System Design', icon: '🏗️', you: 20, demand: 85, peer: 42, badge: 'critical', why: 'Asked in nearly all FAANG and product-first company rounds.' },
+    { name: 'Docker / K8s', icon: '🐳', you: 15, demand: 78, peer: 48, badge: 'critical', why: 'Core to modern deployment and a top differentiator at mid-size companies.' },
+    { name: 'React', icon: '⚛️', you: 30, demand: 95, peer: 65, badge: 'high', why: 'Your beginner level needs to reach intermediate for frontend roles.' },
+    { name: 'AWS / Cloud', icon: '☁️', you: 10, demand: 82, peer: 35, badge: 'high', why: 'Cloud proficiency adds avg ₹2-3L to fresher packages.' },
+    { name: 'SQL / NoSQL', icon: '🗄️', you: 50, demand: 70, peer: 60, badge: 'medium', why: 'You\'re close to the industry bar — a small push would close this gap.' },
+    { name: 'Python', icon: '🐍', you: 80, demand: 75, peer: 72, badge: 'low', why: 'This is already a strength. Maintain and deepen it.' },
+  ];
+
+  const c = document.getElementById('gap-items');
+  if (!c) return;
+  c.innerHTML = '';
+  gaps.forEach(g => {
+    const badgeColor = { critical: 'badge-critical', high: 'badge-high', medium: 'badge-medium', low: 'badge-low' };
+    const el = document.createElement('div');
+    el.className = 'gap-item';
+    el.innerHTML = `
+      <div class="gap-ico">${g.icon}</div>
+      <div class="gap-info">
+        <div class="gap-name">${g.name}</div>
+        <div class="gap-why">${g.why}</div>
+      </div>
+      <div class="gap-bars">
+        <div class="gap-bar-row"><div class="gap-bar-lbl">You</div><div class="gap-bar-track"><div class="gap-bar-fill" style="width:${g.you}%;background:var(--jade);"></div></div></div>
+        <div class="gap-bar-row"><div class="gap-bar-lbl">Peer</div><div class="gap-bar-track"><div class="gap-bar-fill" style="width:${g.peer}%;background:#FBBF24;"></div></div></div>
+        <div class="gap-bar-row"><div class="gap-bar-lbl">Mkt</div><div class="gap-bar-track"><div class="gap-bar-fill" style="width:${g.demand}%;background:#F87171;"></div></div></div>
+      </div>
+      <div class="gap-badge ${badgeColor[g.badge]}">${g.badge}</div>
+    `;
+    c.appendChild(el);
+  });
+}
+
+// ══════════════════════════════════════════
+// PEER BENCHMARKS
+// ══════════════════════════════════════════
+function buildPeerBenchmarks() {
+  const items = [
+    { label: 'Overall Skill Score', pct: 72, color: '#10B981' },
+    { label: 'DSA Proficiency', pct: 68, color: '#059669' },
+    { label: 'Project Quality', pct: 85, color: '#34D399' },
+    { label: 'Interview Readiness', pct: 65, color: '#FBBF24' },
+  ];
+
+  const c = document.getElementById('peer-benchmarks');
+  if (!c) return;
+  c.innerHTML = '';
+  items.forEach(i => {
+    const row = document.createElement('div');
+    row.className = 'peer-row';
+    row.innerHTML = `
+      <div class="peer-ring-wrap">
+        <svg width="56" height="56" viewBox="0 0 56 56">
+          <circle cx="28" cy="28" r="22" fill="none" stroke="rgba(16, 185, 129, 0.1)" stroke-width="5"/>
+          <circle cx="28" cy="28" r="22" fill="none" stroke="${i.color}" stroke-width="5"
+            stroke-dasharray="${i.pct * 1.382} 138.2" stroke-dashoffset="34.6"
+            stroke-linecap="round" transform="rotate(-90 28 28)"/>
+        </svg>
+        <div class="peer-ring-pct">${i.pct}%</div>
+      </div>
+      <div>
+        <div class="peer-info-label">${i.label}</div>
+        <div class="peer-info-sub">Top ${100-i.pct}% of similar peers</div>
+      </div>
+    `;
+    c.appendChild(row);
+  });
+}
+
+// ══════════════════════════════════════════
+// READINESS CARDS
+// ══════════════════════════════════════════
+function buildReadinessCards() {
+  const paths = [
+    { role: 'Full Stack Dev', score: 65, emoji: '⚡', color: '#FBBF24' },
+    { role: 'Data Scientist', score: 52, emoji: '📊', color: '#059669' },
+    { role: 'ML Engineer', score: 48, emoji: '🤖', color: '#10B981' },
+    { role: 'DevOps Eng', score: 38, emoji: '🔧', color: '#34D399' },
+  ];
+
+  const c = document.getElementById('readiness-cards');
+  if (!c) return;
+  c.innerHTML = '';
+  paths.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'readiness-card';
+    card.innerHTML = `
+      <div style="font-size:26px;margin-bottom:8px;">${p.emoji}</div>
+      <div class="readiness-lbl">${p.role}</div>
+      <div class="readiness-pct" style="color:${p.color};">${p.score}%</div>
+      <div class="water-container" style="margin-top:10px;">
+        <div class="water-fill" style="width:${p.score}%;background:${p.color};"></div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:5px;font-family:'Inter',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:0.02em;">readiness</div>
+    `;
+    c.appendChild(card);
+  });
+}
+
+// ══════════════════════════════════════════
+// ROADMAP
+// ══════════════════════════════════════════
+function buildRoadmap() {
+  const phases = [
+    { name: 'Phase 1 · Foundations', dur: 'Weeks 1–4', status: 'done', items: ['Python Advanced ✓', 'Data Structures ✓', 'Algorithms ✓', 'Git & GitHub ✓'], color: 'var(--jade)' },
+    { name: 'Phase 2 · Frontend Mastery', dur: 'Weeks 5–12', status: 'now', items: ['React 18', 'TypeScript ← next', 'Next.js', 'REST APIs', 'CSS Mastery'], color: 'var(--jade-dark)' },
+    { name: 'Phase 3 · Backend & Cloud', dur: 'Weeks 13–20', status: 'future', items: ['Node.js', 'PostgreSQL', 'Redis', 'Docker', 'AWS EC2/S3'], color: 'var(--text3)' },
+    { name: 'Phase 4 · System Design & Launch', dur: 'Weeks 21–28', status: 'future', items: ['HLD / LLD', 'Microservices', 'Capstone Project', 'Portfolio', 'Interview Readiness'], color: 'var(--text3)' },
+  ];
+
+  const c = document.getElementById('roadmap-phases');
+  if (!c) return;
+  c.innerHTML = '';
+  phases.forEach(ph => {
+    const div = document.createElement('div');
+    div.className = 'roadmap-phase';
+    div.innerHTML = `
+      <div class="roadmap-dot ${ph.status === 'done' ? 'done' : ph.status === 'now' ? 'now' : ''}"></div>
+      <div class="roadmap-card ${ph.status === 'now' ? 'now-active' : ''}">
+        <div class="roadmap-phase-header">
+          <div class="roadmap-phase-name" style="color:${ph.color};">${ph.name}</div>
+          <div class="roadmap-duration">${ph.dur}</div>
+        </div>
+        <div class="roadmap-items">
+          ${ph.items.map(i => `<div class="roadmap-item${ph.status==='done'?' done':i.includes('← next')?' next breathe-subtle':''}">${i}</div>`).join('')}
+        </div>
+      </div>
+    `;
+    c.appendChild(div);
+  });
+
+  const tasks = [
+    { name: 'React Hooks deep dive', done: true },
+    { name: 'Build Todo App with TypeScript', done: true },
+    { name: 'TypeScript Generics module', done: false, next: true },
+    { name: 'Next.js App Router tutorial', done: false },
+    { name: 'Build e-commerce frontend', done: false },
+  ];
+
+  const pt = document.getElementById('phase-tasks');
+  if (!pt) return;
+  pt.innerHTML = '';
+  tasks.forEach(t => {
+    const el = document.createElement('div');
+    el.style.cssText = 'display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;';
+    el.innerHTML = `
+      <div style="width:18px;height:18px;border-radius:5px;border:1.5px solid ${t.done?'var(--jade)':'var(--border)'};background:${t.done?'rgba(107,175,146,0.18)':'transparent'};display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--jade);font-size:10px;">${t.done?'✓':''}</div>
+      <span style="color:${t.done?'var(--text-faint)':'var(--text)'};${t.done?'text-decoration:line-through;':''};${t.next?'color:var(--jade-dark);font-weight:500;':''}">${t.name}${t.next?' ← next step':''}</span>
+    `;
+    el.onclick = () => { t.done = !t.done; buildRoadmap(); };
+    pt.appendChild(el);
+  });
+}
+
+// ══════════════════════════════════════════
+// COURSES
+// ══════════════════════════════════════════
+const coursesData = [
+  { title: 'The Complete React Developer', provider: 'Udemy', icon: '⚛️', tags: ['react','hooks','redux'], rating: '4.8', dur: '40hrs', match: '94%', type: ['all','critical','project'], why: 'Addresses your #1 gap. This course aligns directly with your Full Stack goal and your beginner-level React.' },
+  { title: 'TypeScript: The Complete Guide', provider: 'Coursera', icon: '📘', tags: ['typescript','generics'], rating: '4.7', dur: '28hrs', match: '91%', type: ['all','critical'], why: 'TypeScript is critically needed. Your target companies expect it in every frontend role.' },
+  { title: 'AWS Solutions Architect SAA-C03', provider: 'AWS Official', icon: '☁️', tags: ['aws','cloud','certification'], rating: '4.9', dur: '60hrs', match: '87%', type: ['all','cert'], why: 'Closes your cloud gap and adds average ₹3.2L to fresher packages at your target tier.' },
+  { title: 'System Design Interview Prep', provider: 'Educative.io', icon: '🏗️', tags: ['HLD','LLD','scalability'], rating: '4.9', dur: '35hrs', match: '89%', type: ['all','critical'], why: 'System Design is now asked in 82% of product company rounds. This is your highest-leverage investment.' },
+  { title: 'Docker & Kubernetes Bootcamp', provider: 'KodeKloud', icon: '🐳', tags: ['docker','k8s','devops'], rating: '4.8', dur: '22hrs', match: '82%', type: ['all','project'], why: 'Container skills dramatically increase interview conversion at cloud-native companies.' },
+  { title: 'Full Stack Open 2024', provider: 'Univ. Helsinki', icon: '🎓', tags: ['fullstack','free','react'], rating: '5.0', dur: '200hrs', match: '96%', type: ['all','free','project'], why: 'Best free full-stack curriculum available. Covers everything in your Phase 2 roadmap.' },
+  { title: 'Node.js: Zero to Expert', provider: 'Jonas Schmedtmann', icon: '🟢', tags: ['node','express','mongodb'], rating: '4.8', dur: '42hrs', match: '85%', type: ['all','project'], why: 'Builds your backend foundation — pairs perfectly with your React frontend learning.' },
+  { title: 'CS50: Intro to CS — Free', provider: 'Harvard / edX', icon: '🍎', tags: ['cs','free','algorithms'], rating: '5.0', dur: '80hrs', match: '72%', type: ['all','free'], why: 'Strengthens your CS fundamentals — indirectly helps DSA interview performance.' },
+];
+
+let courseFilter = 'all';
+
+function filterCourses(type, btn) {
+  courseFilter = type;
+  document.querySelectorAll('.filter-bar .btn').forEach(b => { b.classList.remove('btn-jade'); b.classList.add('btn-ghost'); });
+  btn.classList.add('btn-jade'); btn.classList.remove('btn-ghost');
+  renderCourses();
+}
+
+function renderCourses() {
+  const grid = document.getElementById('courses-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  coursesData.filter(c => c.type.includes(courseFilter)).forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'course-card';
+    card.innerHTML = `
+      <div class="course-card-header">
+        <div class="course-ico">${c.icon}</div>
+        <div>
+          <div class="course-card-title">${c.title}</div>
+          <div class="course-card-provider">${c.provider}</div>
+        </div>
+      </div>
+      <div class="course-card-why">"${c.why}"</div>
+      <div class="course-tags">${c.tags.map(t=>`<span class="course-tag">${t}</span>`).join('')}</div>
+      <div class="course-card-meta">
+        <span class="course-rating">★ ${c.rating}</span>
+        <span class="course-duration">⏱ ${c.dur}</span>
+        <span class="course-match-badge">${c.match} match</span>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// ══════════════════════════════════════════
+// PROJECTS
+// ══════════════════════════════════════════
+function buildProjects() {
+  const projects = [
+    { name: 'Personal Finance Tracker', icon: '💰', status: 'done', desc: 'Full-stack MERN app with auth, charts, and budget tracking. Demonstrates end-to-end product thinking.', skills: ['React','Node.js','MongoDB','JWT'], impact: '+12% career score' },
+    { name: 'Algorithm Visualizer', icon: '📊', status: 'done', desc: 'Interactive DSA visualizer with 15 algorithms. Shows strong CS fundamentals to interviewers.', skills: ['JavaScript','Canvas API'], impact: '+6% career score' },
+    { name: 'AI Resume Analyzer', icon: '🤖', status: 'progress', desc: 'NLP-based resume scoring using Python and OpenAI API. High-signal project for AI-interested roles.', skills: ['Python','FastAPI','OpenAI','React'], impact: '+18% career score' },
+    { name: 'E-Commerce Microservices', icon: '🛒', status: 'planned', desc: 'Distributed platform using Docker + Kubernetes. Closes Cloud & DevOps gaps while building impressive portfolio.', skills: ['Node.js','Docker','K8s','Redis'], impact: '+22% career score' },
+    { name: 'Real-Time Chat App', icon: '💬', status: 'planned', desc: 'WebSocket-based with rooms and file sharing. Demonstrates backend depth and real-time systems knowledge.', skills: ['Socket.io','React','Express'], impact: '+10% career score' },
+  ];
+
+  const grid = document.getElementById('projects-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  projects.forEach(p => {
+    const sc = { done: 'ps-done', progress: 'ps-progress', planned: 'ps-planned' };
+    const sl = { done: '✓ Completed', progress: '🌱 Growing', planned: '💡 Suggested' };
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    card.innerHTML = `
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px;">
+        <div style="display:flex;align-items:center;gap:11px;">
+          <div style="font-size:24px;">${p.icon}</div>
+          <div>
+            <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;color:var(--text);">${p.name}</div>
+            <div class="project-status-badge ${sc[p.status]}">${sl[p.status]}</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:var(--jade-dark);background:rgba(107,175,146,0.1);padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;white-space:nowrap;">${p.impact}</div>
+      </div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:12px;font-style:italic;">${p.desc}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;">
+        ${p.skills.map(s=>`<span style="font-size:11px;font-family:'JetBrains Mono',monospace;padding:3px 9px;border-radius:5px;background:rgba(107,175,146,0.08);color:var(--text3);border:1px solid var(--border);">${s}</span>`).join('')}
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+// ══════════════════════════════════════════
+// INTERVIEW QUESTIONS
+// ══════════════════════════════════════════
+const qData = [
+  { cat: 'dsa', type: 'DSA', q: 'Explain the difference between BFS and DFS. When would you use each?', a: 'BFS uses a queue and explores level by level — ideal for shortest paths in unweighted graphs. DFS uses a stack (or recursion) and goes deep first — best for cycle detection, topological sort, or when you need to explore all paths. Use BFS for "nearest neighbor" problems, DFS for full graph traversal where path order matters.' },
+  { cat: 'system', type: 'System Design', q: 'Design a URL shortener like bit.ly that handles 100M requests/day.', a: 'Use Base62 encoding to generate 7-char short codes. Store original→short in PostgreSQL with a Redis cache for hot URLs. Use consistent hashing for distributed DB. Handle redirects via 301/302. Rate limit with token bucket algorithm. CDN for global latency. Horizontally scale API servers behind a load balancer.' },
+  { cat: 'behavioral', type: 'Behavioral', q: 'Tell me about a time you faced a technical challenge you couldn\'t solve alone.', a: 'Use the STAR method: Situation (context + the challenge), Task (your specific role), Action (how you approached it — research, collaboration, breaking it down), Result (quantified outcome + what you learned). Be honest and emphasize a growth mindset over heroics.' },
+  { cat: 'frontend', type: 'Frontend', q: 'What are React hooks and why were they introduced? Explain useState and useEffect.', a: 'Hooks let functional components use state and lifecycle features without classes. useState returns [value, setter] for reactive state. useEffect runs side effects (API calls, subscriptions) after render, with a dependency array controlling re-execution. Hooks were introduced to avoid class complexity and make logic reusable through custom hooks.' },
+  { cat: 'dsa', type: 'DSA', q: 'What is dynamic programming? Walk through the coin change problem.', a: 'DP breaks problems into overlapping subproblems and stores results (memoization or tabulation). For coin change (minimum coins for amount n): dp[i] = min coins to make amount i. Initialize dp[0]=0, dp[1..n]=∞. For each amount i and each coin c, dp[i] = min(dp[i], dp[i-c]+1). Time O(n × coins), Space O(n).' },
+  { cat: 'system', type: 'System Design', q: 'How would you design a notification system for 10 million users?', a: 'Use a message queue (Kafka) to decouple producers from consumers. Fanout service for broadcasting. Store notifications in Cassandra (write-heavy, time-series). WebSockets for real-time delivery in web clients, FCM/APNS for mobile push. Rate limit per user per type. Delivery tracking with status. Retry with exponential backoff.' },
+];
+
+let qFilter = 'all';
+
+function filterQ(type, btn) {
+  qFilter = type;
+  document.querySelectorAll('.filter-bar .btn').forEach(b => { b.classList.remove('btn-jade'); b.classList.add('btn-ghost'); });
+  btn.classList.add('btn-jade'); btn.classList.remove('btn-ghost');
+  renderQuestions();
+}
+
+function renderQuestions() {
+  const grid = document.getElementById('questions-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  const filtered = qFilter === 'all' ? qData : qData.filter(q => q.cat === qFilter);
+  filtered.forEach(q => {
+    const card = document.createElement('div');
+    card.className = 'question-card';
+    card.innerHTML = `
+      <div class="q-category">${q.type}</div>
+      <div class="q-text">${q.q}</div>
+      <button class="btn btn-ghost btn-sm" onclick="toggleAnswer(this)" style="width:100%;">Reveal Spiritling's guidance →</button>
+      <div class="q-answer">${q.a}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function toggleAnswer(btn) {
+  const ans = btn.nextElementSibling;
+  ans.classList.toggle('show');
+  btn.textContent = ans.classList.contains('show') ? 'Hide guidance ↑' : 'Reveal Spiritling\'s guidance →';
+  if (ans.classList.contains('show')) spiritlingReact('happy');
+}
+
+// ══════════════════════════════════════════
+// SPIRITLING CHAT
+// ══════════════════════════════════════════
+const suggestedQs = [
+  "What are my top 3 growth opportunities right now?",
+  "Create a gentle 90-day study plan for me",
+  "Which certification should I focus on first?",
+  "How do I prepare for a Google SDE interview?",
+  "What salary can I expect after completing the roadmap?",
+  "Which project would impress FAANG recruiters most?",
+];
+
+const aiInsights = [
+  { icon: '📈', text: 'TypeScript demand has grown 34% year-over-year in full-stack job descriptions.' },
+  { icon: '🌿', text: 'System Design is now expected in 82% of product company first rounds.' },
+  { icon: '🌟', text: 'Students with 3+ well-documented GitHub projects receive 2.4× more callbacks.' },
+  { icon: '💫', text: 'AWS SAA-C03 certified candidates earn on average ₹3.2L more at the fresher level.' },
+];
+
+function buildAIPanel() {
+  const sqc = document.getElementById('suggested-qs');
+  if (sqc) {
+    sqc.innerHTML = '';
+    suggestedQs.forEach(q => {
+      const el = document.createElement('div');
+      el.className = 'sq-item';
+      el.innerHTML = `<span style="color:var(--jade);">→</span> ${q}`;
+      el.onclick = () => { document.getElementById('chat-input').value = q; sendMessage(); };
+      sqc.appendChild(el);
+    });
+  }
+
+  const aic = document.getElementById('ai-insights');
+  if (aic) {
+    aic.innerHTML = '';
+    aiInsights.forEach(i => {
+      const el = document.createElement('div');
+      el.style.cssText = 'display:flex;align-items:flex-start;gap:10px;';
+      el.innerHTML = `<div style="font-size:18px;flex-shrink:0;">${i.icon}</div><div style="font-size:13px;color:var(--text2);line-height:1.55;">${i.text}</div>`;
+      aic.appendChild(el);
+    });
+  }
+}
+
+const chatHistory = [];
+
+function addMsg(role, text) {
+  const c = document.getElementById('chat-messages');
+  if (!c) return;
+  const el = document.createElement('div');
+  el.className = `msg ${role === 'user' ? 'user' : ''}`;
+  el.innerHTML = `
+    <div class="msg-avatar-sm ${role === 'user' ? 'user-av' : 'ai-av'}">${role === 'user' ? '◎' : '🌿'}</div>
+    <div class="msg-bubble ${role === 'user' ? 'user-bub' : 'ai-bub'}">${text}</div>
+  `;
+  c.appendChild(el);
+  c.scrollTop = c.scrollHeight;
+}
+
+function addTyping() {
+  const c = document.getElementById('chat-messages');
+  if (!c) return;
+  const el = document.createElement('div');
+  el.className = 'msg'; el.id = 'typing-ind';
+  el.innerHTML = `<div class="msg-avatar-sm ai-av">🌿</div><div class="msg-bubble ai-bub"><div class="typing"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>`;
+  c.appendChild(el);
+  c.scrollTop = c.scrollHeight;
+}
+
+function removeTyping() {
+  document.getElementById('typing-ind')?.remove();
+}
+
+async function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if (!msg) return;
+  input.value = '';
+  document.getElementById('send-btn').disabled = true;
+
+  addMsg('user', msg);
+  chatHistory.push({ role: 'user', content: msg });
+
+  spiritlingReact('thinking');
+  addTyping();
+
+  const system = `You are Spiritling — the calm, wise AI guide inside HikariZen, a Zen-inspired career intelligence platform. You speak gently, supportively, and with quiet confidence. You NEVER say "Critical gap detected" or use harsh language. Instead you say things like "A growth opportunity has been identified 🌿" or "Here is a gentle path forward."
+
+The student's profile: ${userProfile.name}, ${userProfile.year} ${userProfile.degree}, ${userProfile.university}, CGPA ${userProfile.cgpa}. Target: ${userProfile.targetRole} (${userProfile.targetCompanies.join(', ')}). Current skills: ${userProfile.skills.map(s => `${s.name} (${s.level})`).join(', ')}. Growth areas: ${userProfile.missingSkills.join(', ')}. Career Readiness: ${userProfile.readiness}/100.
+
+Respond with calm, supportive, specific guidance. Use occasional emojis 🌿✦. Format key points with **bold**. Keep responses focused and warm.`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system,
+        messages: chatHistory,
+      })
+    });
+    const data = await res.json();
+    removeTyping();
+    spiritlingReact('happy');
+
+    if (data.content?.[0]) {
+      const reply = data.content[0].text;
+      chatHistory.push({ role: 'assistant', content: reply });
+      addMsg('ai', reply.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>'));
+    } else {
+      addMsg('ai', '🌿 I am here, though the path is briefly obscured. Please try again in a moment.');
+    }
+  } catch {
+    removeTyping();
+    spiritlingReact('happy');
+    const name = userProfile.name.split(' ')[0];
+    const fallbacks = [
+      `A growth opportunity has been identified 🌿<br><br>Based on your profile, ${name}, here is a gentle 30-day path:<br><br><strong>Week 1–2:</strong> ${userProfile.missingSkills[0]} fundamentals (Udemy course, 2hrs/day)<br><strong>Week 3–4:</strong> 2 LeetCode mediums daily + System Design Chapter 1<br><br>This directly closes your top gaps and should raise your readiness score to 80+ quietly and steadily.`,
+      `Your 90-day journey, held gently 🌿<br><br><strong>Month 1:</strong> ${userProfile.missingSkills[0]} + React mastery → build one small project<br><strong>Month 2:</strong> System Design fundamentals + Node.js backend basics<br><strong>Month 3:</strong> Mock interviews + AWS basics + portfolio polish<br><br>Students with your profile who walked this path saw callbacks from mid-tier product companies within 4 months.`,
+      `For your journey, the **AWS SAA-C03** certification offers the most nourishment 🌿<br><br>It closes your cloud gap, adds an average of ₹3.2L to fresher packages, and takes about 8 gentle weeks of consistent study alongside your other pursuits.<br><br>Begin with ACloudGuru or Adrian Cantrill's course. Then, when you're ready, let Kubernetes follow naturally.`,
+    ];
+    addMsg('ai', fallbacks[Math.floor(Math.random() * fallbacks.length)]);
+    chatHistory.push({ role: 'assistant', content: 'Response' });
+  }
+
+  document.getElementById('send-btn').disabled = false;
+}
+
+function handleChatKey(e) {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+}
+
+// ══════════════════════════════════════════
+// PROFILE SAVE
+// ══════════════════════════════════════════
+function saveProfile() {
+  saveUserProfile(); // This now handles saving AND rendering
+  showToast('🌿 Profile saved. Spiritling is scanning your growth path…', 'jade');
+  spiritlingReact('happy');
+  setTimeout(() => showPage('gap'), 1200);
+}
+
+// ══════════════════════════════════════════
+// DAILY REFLECTION
+// ══════════════════════════════════════════
+function loadReflection() {
+  const saved = localStorage.getItem('hikarizen_reflection');
+  if (saved) {
+    document.getElementById('daily-reflection-input').value = saved;
+  }
+}
+
+function saveReflection() {
+  const val = document.getElementById('daily-reflection-input').value;
+  localStorage.setItem('hikarizen_reflection', val);
+  const status = document.getElementById('reflection-status');
+  status.textContent = "Saved 🌿";
+  setTimeout(() => { status.textContent = ""; }, 2000);
+}
+
+// ══════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════
+function initAll() {
+  if (localStorage.getItem('hikarizen_dark') === 'true') {
+    document.body.classList.add('dark-mode');
+    const btn = document.getElementById('dark-mode-btn');
+    if (btn) btn.textContent = '☀️ Light Mode';
+  }
+  startContinuousLife();
+  drawRadar();
+  buildQALinks();
+  buildSalaryBars();
+  buildHeatmap();
+  buildGapItems();
+  buildPeerBenchmarks();
+  buildReadinessCards();
+  buildRoadmap();
+  renderCourses();
+  buildProjects();
+  renderQuestions();
+  buildAIPanel();
+  
+  loadReflection();
+  bindProfileInputs(); // New: ensures input changes are captured
+  syncUIWithProfile(); // UPDATED to use new dynamic system
+
+  setTimeout(() => {
+    const name = userProfile.name || "Seeker";
+    showToast(`🌿 Welcome back, ${name.split(' ')[0]}. Growth opportunities await.`, 'jade');
+  }, 600);
+}
+</script>
+</body>
+</html>
